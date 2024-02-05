@@ -2,6 +2,7 @@
 syntax on
 set number relativenumber
 set autoindent
+let g:clang_library_path='/usr/lib/llvm-14/lib/libclang-14.so.1'
 
 " no compatibility with vi
 set nocompatible
@@ -46,6 +47,13 @@ set showmatch
 set hlsearch
 " Set the commands to save in history default number is 20.
 set history=1000
+" Automatically save before commands like :next and :make
+set autowrite
+" Hide buffers when they are abandoned
+set hidden
+" Enable mouse usage (all modes)
+set mouse=a
+set background=dark
 
 " Enable auto completion menu after pressing TAB.
 set wildmenu
