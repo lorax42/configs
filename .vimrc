@@ -64,7 +64,8 @@ set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xls
 
 " PLUGINS ---------------------------------------------------------------- {{{
-
+"$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 " Plugin code goes here.
 call plug#begin('~/.vim/plugged')
 
