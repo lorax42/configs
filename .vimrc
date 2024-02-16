@@ -88,9 +88,10 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O<TAB>
 inoremap {;<CR> {<CR>};<ESC>O<TAB>
 
-nnoremap W w
-nnoremap Wq wq
-nnoremap WQ wq
+nnoremap :W :w
+nnoremap :Q :q
+nnoremap Wq :wq
+nnoremap :WQ :wq
 
 " }}}
 
