@@ -63,6 +63,9 @@ set wildmode=list:longest
 " Wildmenu will ignore files with these extensions.
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xls
 
+" make vim copy to system clipboard for external use
+set clipboard+=unnamedplus
+
 " PLUGINS ---------------------------------------------------------------- {{{
 "$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
