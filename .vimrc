@@ -1,4 +1,4 @@
-" https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/
+" I partially used https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/ as a reference
 syntax on
 set number relativenumber
 set autoindent
@@ -20,6 +20,7 @@ syntax on
 " cursor line horizontal
 set cursorline
 hi CursorLine cterm=NONE ctermbg=242
+hi CursorLineNr cterm=bold ctermfg=11 ctermbg=242
 " cursor line vertical
 " set cursorcolumn
 
@@ -131,5 +132,6 @@ set statusline+=\ row:\ %l\ col:\ %c\ percent:\ %p%%
 " Show the status on the second to last line.
 set laststatus=2
 
-hi StatusLine cterm=NONE ctermbg=grey ctermfg=black
+"hi StatusLine cterm=NONE ctermbg=grey ctermfg=black
+hi StatusLine cterm=bold ctermbg=white ctermfg=black
 " }}}
