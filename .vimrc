@@ -67,6 +67,9 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xls
 " make vim copy to system clipboard for external use
 set clipboard+=unnamedplus
 
+" airline theme
+let g:airline_theme='minimalist'
+
 " PLUGINS ---------------------------------------------------------------- {{{
 "$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -75,6 +78,8 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'dense-analysis/ale'
     Plug 'preservim/nerdtree'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
