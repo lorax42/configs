@@ -2,7 +2,7 @@
 syntax on
 set number relativenumber
 set autoindent
-let g:clang_library_path='/usr/lib/llvm-14/lib/libclang-14.so.1'
+"let g:clang_library_path='/usr/lib/llvm-14/lib/libclang-14.so.1'
 
 " no compatibility with vi
 set nocompatible
@@ -68,7 +68,11 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xls
 set clipboard+=unnamedplus
 
 " airline theme
-let g:airline_theme='minimalist'
+"let g:airline_theme='minimalist'
+"let g:airline_left_sep='>'
+"let g:airline_right_sep='<'
+"let g:airline_powerline_fonts=1
+"let g:airline=0
 
 " PLUGINS ---------------------------------------------------------------- {{{
 "$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -78,8 +82,8 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'dense-analysis/ale'
     Plug 'preservim/nerdtree'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    "Plug 'vim-airline/vim-airline'
+    "Plug 'vim-airline/vim-airline-themes'
     Plug 'KSP-KOS/EditorTools'
 
 call plug#end()
