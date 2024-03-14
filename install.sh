@@ -1,5 +1,10 @@
 #!/usr/bin/bash
 
+install(){
+	echo "Installing..."
+    cp .vimrc ~/ # install .vimrc
+}
+
 if [[ -f ~/.vimrc ]]
 then
     echo "Do you want to replace ~/.vimrc?"
@@ -8,12 +13,14 @@ then
 
     if [[ "$yn" == "y" || "$yn" == "Y" || "$yn" == "" ]]
     then
-        echo "Installing..."
-        cp .vimrc ~/ # install .vimrc
+	install
     elif [[ "$yn" == "n" || "$yn" == "N" ]]
     then
         echo "Cancelling install..."
     else
         echo "invalid input"
     fi
+else
+	install
 fi
+
