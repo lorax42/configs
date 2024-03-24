@@ -1,26 +1,47 @@
 #!/usr/bin/bash
 
 install(){
-	echo "Installing..."
-    cp .vimrc ~/ # install .vimrc
+    program=$1
+
+	echo "Installing \"$program\"..."
+
+    case $program in
+        ~/.vimrc)
+            cp .vimrc ~/ # install .vimrc
+            ;;
+        ~/.config/starship.toml)
+            cp starship.toml ~/.config/ # install starship.toml
+            ;;
+        *)
+            echo "ERROR: \"$program\" not found"
+            ;;
+    esac
 }
 
-if [[ -f ~/.vimrc ]]
-then
-    echo "Do you want to replace ~/.vimrc?"
-    echo -n "(Y/n): "
-    read yn
+check(){
+    program=$1
 
-    if [[ "$yn" == "y" || "$yn" == "Y" || "$yn" == "" ]]
+    if [[ -f $program ]]
     then
-	install
-    elif [[ "$yn" == "n" || "$yn" == "N" ]]
-    then
-        echo "Cancelling install..."
+        echo "Do you want to replace \"$program\"?"
+        echo -n "(Y/n): "
+        read yn
+
+        if [[ "$yn" == "y" || "$yn" == "Y" || "$yn" == "" ]]
+        then
+            install $program
+        elif [[ "$yn" == "n" || "$yn" == "N" ]]
+        then
+            echo "Cancelling install of \"$program\"..."
+        else
+            echo "ERROR: invalid input \"$yn\""
+        fi
     else
-        echo "invalid input"
+        install $program
     fi
-else
-	install
-fi
+    echo
+}
+
+check ~/.vimrc
+check ~/.config/starship.toml
 
