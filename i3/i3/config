@@ -52,6 +52,10 @@ tiling_drag modifier titlebar
 # start a terminal
 #i3-sensible-terminal
 bindsym $mod+Return exec xfce4-terminal
+bindsym Ctrl+Alt+t exec xfce4-terminal
+bindsym Ctrl+Alt+f exec thunar
+
+bindsym $mod+Shift+l exec i3lock
 
 # kill focused window
 bindsym $mod+Shift+q kill
