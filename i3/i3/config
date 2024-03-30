@@ -245,6 +245,7 @@ exec_always feh --bg-fill ~/Pictures/wallpaper/Emerald-wallpaper_1920x1080.png
 # Transparency with picom compositor
 exec_always picom -f
 
+# GAPS
 gaps inner 5
 gaps outer 5
 
