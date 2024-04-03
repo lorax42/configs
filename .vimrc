@@ -1,4 +1,5 @@
 " I partially used https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/ as a reference
+" THIS AND THAT ---------------------------------------------------------------- {{{
 syntax on
 set number relativenumber
 set autoindent
@@ -74,6 +75,8 @@ set clipboard+=unnamedplus
 "let g:airline_powerline_fonts=1
 "let g:airline=0
 
+" }}}
+
 " PLUGINS ---------------------------------------------------------------- {{{
 "$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -106,6 +109,14 @@ nnoremap :W :w
 nnoremap :Q :q
 nnoremap Wq :wq
 nnoremap :WQ :wq
+
+" move line/selection up/down with Alt+k/j (NOT WORKING!)
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <ESC>:m .+1<CR>==gi
+inoremap <A-k> <ESC>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " }}}
 
