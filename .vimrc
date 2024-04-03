@@ -3,7 +3,6 @@
 syntax on
 set number relativenumber
 set autoindent
-set smartindent
 
 " no compatibility with vi
 set nocompatible
