@@ -2,7 +2,7 @@
 syntax on
 set number relativenumber
 set autoindent
-"let g:clang_library_path='/usr/lib/llvm-14/lib/libclang-14.so.1'
+set smartindent
 
 " no compatibility with vi
 set nocompatible
@@ -25,9 +25,9 @@ hi CursorLineNr cterm=bold ctermfg=11 ctermbg=242
 " set cursorcolumn
 
 " shift width X Spaces
-set shiftwidth=4
+set shiftwidth=0
 " tab width X columns
-set tabstop=4
+set tabstop=2
 " space instead of tab
 set expandtab
 
