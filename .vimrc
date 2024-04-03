@@ -27,7 +27,7 @@ hi CursorLineNr cterm=bold ctermfg=11 ctermbg=242
 " shift width X Spaces
 set shiftwidth=0
 " tab width X columns
-set tabstop=2
+set tabstop=4
 " space instead of tab
 set expandtab
 
@@ -75,6 +75,7 @@ set clipboard+=unnamedplus
 "let g:airline=0
 
 " }}}
+
 
 " PLUGINS ---------------------------------------------------------------- {{{
 "$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
