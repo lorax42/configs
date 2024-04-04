@@ -55,7 +55,7 @@ bindsym $mod+Return exec xfce4-terminal
 bindsym Ctrl+Alt+t exec xfce4-terminal
 bindsym Ctrl+Alt+f exec thunar
 
-bindsym $mod+Shift+l exec i3lock
+bindsym $mod+Shift+l exec i3lock -c 000000
 
 # kill focused window
 bindsym $mod+Shift+q kill
