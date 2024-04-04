@@ -22,14 +22,18 @@ set cursorline
 hi CursorLine cterm=NONE ctermbg=242
 hi CursorLineNr cterm=bold ctermfg=11 ctermbg=242
 " cursor line vertical
-" set cursorcolumn
+"set cursorcolumn
 
-" shift width X Spaces
-set shiftwidth=0
+" indent width X Spaces
+set shiftwidth=4
 " tab width X columns
 set tabstop=4
 " space instead of tab
 set expandtab
+" tab insert comination of tab and space?
+set softtabstop=0
+" insert to go to next indent
+"set smarttab
 
 " While searching though a file incrementally highlight matching characters as you type.
 set incsearch
@@ -102,8 +106,10 @@ inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O<TAB>
-inoremap {;<CR> {<CR>};<ESC>O<TAB>
+"inoremap {<CR> {<CR>}<ESC>O<TAB>
+inoremap {<CR> {<CR>}<ESC>O
+"inoremap {;<CR> {<CR>};<ESC>O<TAB>
+inoremap {;<CR> {<CR>};<ESC>O
 
 nnoremap :W :w
 nnoremap :Q :q
