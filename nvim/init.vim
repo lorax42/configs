@@ -18,10 +18,10 @@ syntax on
 
 " cursor line horizontal
 set cursorline
-"hi CursorLine cterm=NONE ctermbg=242
-hi CursorLine cterm=NONE
-"hi CursorLineNr cterm=bold ctermfg=11 ctermbg=242
-hi CursorLineNr cterm=bold ctermfg=11
+hi CursorLine cterm=NONE ctermbg=237
+"hi CursorLine cterm=NONE
+hi CursorLineNr cterm=bold ctermfg=11 ctermbg=237
+"hi CursorLineNr cterm=bold ctermfg=11
 hi LineNr cterm=NONE ctermfg=245
 " cursor line vertical
 "set cursorcolumn
