@@ -63,6 +63,7 @@ set hidden
 " Enable mouse usage (all modes)
 set mouse=a
 set background=dark
+"colorscheme gruvbox
 
 " Enable auto completion menu after pressing TAB.
 set wildmenu
@@ -95,6 +96,7 @@ call plug#begin('~/.vim/plugged')
     "Plug 'vim-airline/vim-airline'
     "Plug 'vim-airline/vim-airline-themes'
     Plug 'Freedzone/kerbovim'
+    Plug 'ellisonleao/gruvbox.nvim'
 
 call plug#end()
 
