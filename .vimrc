@@ -117,12 +117,15 @@ nnoremap Wq :wq
 nnoremap :WQ :wq
 
 " move line/selection up/down with Alt+k/j (NOT WORKING!)
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <ESC>:m .+1<CR>==gi
-inoremap <A-k> <ESC>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+"nnoremap <A-j> :m .+1<CR>==
+"nnoremap <A-k> :m .-2<CR>==
+"inoremap <A-j> <ESC>:m .+1<CR>==gi
+"inoremap <A-k> <ESC>:m .-2<CR>==gi
+"vnoremap <A-j> :m '>+1<CR>gv=gv
+"vnoremap <A-k> :m '<-2<CR>gv=gv
+
+nnoremap <ALT+j> :m+<CR>
+nnoremap <ALT+k> :m-2<CR>
 
 " }}}
 
