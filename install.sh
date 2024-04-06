@@ -12,6 +12,14 @@ install(){
         ~/.config/starship.toml)
             cp starship.toml ~/.config/ # install starship.toml
             ;;
+        ~/.config/nvim/init.vim)
+            if [[ ! ( -d ~/.config/nvim ) ]]
+            then
+                mkdir ~/.config/nvim
+            fi
+
+            cp nvim/init.vim ~/.config/nvim/
+            ;;
         *)
             echo "ERROR: \"$program\" not found"
             ;;
@@ -44,4 +52,5 @@ check(){
 
 check ~/.vimrc
 check ~/.config/starship.toml
+check ~/.config/nvim/init.vim
 
