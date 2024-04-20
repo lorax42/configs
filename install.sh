@@ -29,9 +29,9 @@ install(){
 
 check(){
     src=$1
-    dest=$1
+    dest=$2
 
-    diff $src $dest
+    diff $src $dest >> /dev/null
     if [[ "$?" -ne "0" ]]
     then
         if [[ -f $dest ]]
@@ -42,7 +42,7 @@ check(){
 
             if [[ "$yn" == "y" || "$yn" == "Y" || "$yn" == "" ]]
             then
-                install $dest
+                install $src $dest
             elif [[ "$yn" == "n" || "$yn" == "N" ]]
             then
                 echo "Cancelling install of \"$dest\"..."
@@ -50,9 +50,9 @@ check(){
                 echo "ERROR: invalid input \"$yn\""
             fi
         else
-            install $dest
+            install $src $dest
         fi
-        echo
+        echo "-------------------------"
     fi
 }
 
