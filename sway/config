@@ -1,4 +1,5 @@
 # sway config file
+# requires i3status
 
 include /etc/sway/config.d/*
 
