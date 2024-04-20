@@ -1,11 +1,12 @@
 #!/usr/bin/bash
 
 install(){
-    program=$1
+    src=$1
+    dest=$2
 
-	echo "Installing \"$program\"..."
+	echo "Installing \"$src\" to \"$dest\"..."
 
-    case $program in
+    case $dest in
         ~/.vimrc)
             cp .vimrc ~/ # install .vimrc
             ;;
@@ -21,36 +22,41 @@ install(){
             cp nvim/init.vim ~/.config/nvim/
             ;;
         *)
-            echo "ERROR: \"$program\" not found"
+            echo "ERROR: \"$dest\" not found"
             ;;
     esac
 }
 
 check(){
-    program=$1
+    src=$1
+    dest=$1
 
-    if [[ -f $program ]]
+    diff $src $dest
+    if [[ "$?" -ne "0" ]]
     then
-        echo "Do you want to replace \"$program\"?"
-        echo -n "(Y/n): "
-        read yn
+        if [[ -f $dest ]]
+        then
+            echo "Do you want to replace \"$dest\"?"
+            echo -n "(Y/n): "
+            read yn
 
-        if [[ "$yn" == "y" || "$yn" == "Y" || "$yn" == "" ]]
-        then
-            install $program
-        elif [[ "$yn" == "n" || "$yn" == "N" ]]
-        then
-            echo "Cancelling install of \"$program\"..."
+            if [[ "$yn" == "y" || "$yn" == "Y" || "$yn" == "" ]]
+            then
+                install $dest
+            elif [[ "$yn" == "n" || "$yn" == "N" ]]
+            then
+                echo "Cancelling install of \"$dest\"..."
+            else
+                echo "ERROR: invalid input \"$yn\""
+            fi
         else
-            echo "ERROR: invalid input \"$yn\""
+            install $dest
         fi
-    else
-        install $program
+        echo
     fi
-    echo
 }
 
-check ~/.vimrc
-check ~/.config/starship.toml
-check ~/.config/nvim/init.vim
+check .vimrc ~/.vimrc
+check starship.toml ~/.config/starship.toml
+check nvim/init.vim ~/.config/nvim/init.vim
 
