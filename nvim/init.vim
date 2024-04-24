@@ -119,6 +119,8 @@ nnoremap :Q :q
 nnoremap Wq :wq
 nnoremap :WQ :wq
 
+nnoremap <C-F> <CMD>NERDTree<CR>
+
 " move line/selection up/down with Alt+k/j (NOT WORKING!)
 "nnoremap <A-j> :m .+1<CR>==
 "nnoremap <A-k> :m .-2<CR>==
