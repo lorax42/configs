@@ -128,12 +128,8 @@ nnoremap <A-DOWN> ddp==
 nnoremap <A-k> ddkP==
 nnoremap <A-UP> ddkP==
 
-"vnoremap <A-j> dpgv
-vnoremap <A-j> dp==
-vnoremap <A-DOWN> dp==
-"vnoremap <A-k> dkPgv
-vnoremap <a-k> dkp==
-vnoremap <a-UP> dkp==
+vnoremap <A-Up>   :m '<-2<CR>gv=gv
+vnoremap <A-Down> :m '>+1<CR>gv=gv
 
 inoremap <A-j> <ESC>ddp==gi
 inoremap <A-DOWN> <ESC>ddp==gi
