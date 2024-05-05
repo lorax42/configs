@@ -95,6 +95,7 @@ call plug#begin('~/.vim/plugged')
     "Plug 'vim-airline/vim-airline-themes'
     Plug 'Freedzone/kerbovim'
     Plug 'morhetz/gruvbox'
+    Plug 'arrufat/vala.vim'
 
 call plug#end()
 
