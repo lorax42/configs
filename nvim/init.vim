@@ -117,12 +117,29 @@ inoremap {;<CR> {<CR>};<ESC>O
 
 nnoremap :W :w
 nnoremap :Q :q
-nnoremap Wq :wq
+nnoremap :Wq :wq
 nnoremap :WQ :wq
 
 nnoremap <C-F> <CMD>NERDTree<CR>
 
 " move line/selection up/down with Alt+k/j (NOT WORKING!)
+nnoremap <A-j> ddp==
+nnoremap <A-DOWN> ddp==
+nnoremap <A-k> ddkP==
+nnoremap <A-UP> ddkP==
+
+"vnoremap <A-j> dpgv
+vnoremap <A-j> dp==
+vnoremap <A-DOWN> dp==
+"vnoremap <A-k> dkPgv
+vnoremap <a-k> dkp==
+vnoremap <a-UP> dkp==
+
+inoremap <A-j> <ESC>ddp==gi
+inoremap <A-DOWN> <ESC>ddp==gi
+inoremap <A-k> <ESC>ddkP==gi
+inoremap <A-UP> <ESC>ddkP==gi
+
 "nnoremap <A-j> :m .+1<CR>==
 "nnoremap <A-k> :m .-2<CR>==
 "inoremap <A-j> <ESC>:m .+1<CR>==gi
