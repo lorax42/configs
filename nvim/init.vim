@@ -96,8 +96,15 @@ call plug#begin('~/.vim/plugged')
     Plug 'Freedzone/kerbovim'
     Plug 'morhetz/gruvbox'
     Plug 'arrufat/vala.vim'
+    Plug 'tpope/vim-surround'
+    Plug 'numToStr/Comment.nvim'
+    "Plug 'nvim-tree/nvim-tree.lua'
+
+    "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
+
+lua require('Comment').setup()
 
 " }}}
 
