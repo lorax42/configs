@@ -98,6 +98,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'arrufat/vala.vim'
     Plug 'tpope/vim-surround'
     Plug 'numToStr/Comment.nvim'
+    Plug 'tpope/vim-fugitive'
+    Plug 'c0r73x/vimdir.vim'
     "Plug 'nvim-tree/nvim-tree.lua'
 
     "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
