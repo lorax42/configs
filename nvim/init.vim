@@ -97,7 +97,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'morhetz/gruvbox'
     Plug 'arrufat/vala.vim'
     Plug 'tpope/vim-surround'
-    Plug 'numToStr/Comment.nvim'
+    "Plug 'numToStr/Comment.nvim'
     Plug 'tpope/vim-fugitive'
     Plug 'c0r73x/vimdir.vim'
     "Plug 'nvim-tree/nvim-tree.lua'
