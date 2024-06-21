@@ -106,7 +106,7 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
-lua require('Comment').setup()
+"lua require('Comment').setup()
 
 " }}}
 
