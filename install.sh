@@ -21,6 +21,14 @@ install(){
 
             cp nvim/init.vim ~/.config/nvim/
             ;;
+        ~/.config/kitty/kitty.conf)
+            if [[ ! ( -d ~/.config/kitty ) ]]
+            then
+                mkdir ~/.config/kitty
+            fi
+
+            cp kitty.conf ~/.config/kitty
+            ;;
         *)
             echo "ERROR: \"$dest\" not found"
             ;;
@@ -59,4 +67,4 @@ check(){
 check .vimrc ~/.vimrc
 check starship.toml ~/.config/starship.toml
 check nvim/init.vim ~/.config/nvim/init.vim
-
+check kitty.conf ~/.config/kitty/kitty.conf
