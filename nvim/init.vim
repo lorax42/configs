@@ -101,6 +101,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'c0r73x/vimdir.vim'
     "Plug 'nvim-tree/nvim-tree.lua'
+    Plug 'Mofiqul/dracula.nvim'
 
     "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
