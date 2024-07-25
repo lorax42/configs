@@ -26,7 +26,8 @@ hi LineNr cterm=NONE ctermfg=245
 " cursor line vertical
 "set cursorcolumn
 " set cursor to block in all modes
-set guicursor=n-v-c-i:block
+"set guicursor=n-v-c-i:block
+set guicursor=n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20
 
 " indent width X Spaces
 set shiftwidth=4
@@ -54,6 +55,8 @@ set showmode
 set showmatch
 " Use highlighting when doing a search.
 set hlsearch
+" set search highlight colour
+hi Search cterm=NONE ctermbg=237
 " Set the commands to save in history default number is 20.
 set history=1000
 " Automatically save before commands like :next and :make
@@ -102,6 +105,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'c0r73x/vimdir.vim'
     "Plug 'nvim-tree/nvim-tree.lua'
     Plug 'Mofiqul/dracula.nvim'
+    Plug 'folke/tokyonight.nvim'
+    Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
     "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -195,4 +200,5 @@ set laststatus=2
 hi StatusLine cterm=bold ctermbg=white ctermfg=black
 " }}}
 set background=dark
-colorscheme gruvbox
+"colorscheme gruvbox
+colorscheme catppuccin-mocha
