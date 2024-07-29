@@ -1,5 +1,5 @@
 " I partially used https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/ as a reference
-" THIS AND THAT ---------------------------------------------------------- {{{
+" GENERAL ---------------------------------------------------------- {{{
 set number relativenumber
 set autoindent
 
@@ -84,6 +84,15 @@ set clipboard+=unnamedplus
 "let g:airline_powerline_fonts=1
 "let g:airline=0
 
+"SirVer/ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
+
+"Shougo/deoplete.nvim
+let g:deoplete#enable_at_startup = 1
+
 " }}}
 
 
@@ -110,14 +119,7 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'honza/vim-snippets'
     Plug 'SirVer/ultisnips'
-
-    let g:UltiSnipsExpandTrigger="<tab>"
-    let g:UltiSnipsJumpForwardTrigger="<c-b>"
-    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-    let g:UltiSnipsEditSplit="vertical"
-
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    let g:deoplete#enable_at_startup = 1
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } "pip3 install --user --upgrade pynvim
 
     "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
