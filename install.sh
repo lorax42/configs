@@ -75,5 +75,5 @@ check(){
 check .vimrc ~/.vimrc
 check starship.toml ~/.config/starship.toml
 check nvim/init.vim ~/.config/nvim/init.vim
-check nvim/init.lua ~/.config/nvim/init.lua
+#check nvim/init.lua ~/.config/nvim/init.lua
 check kitty.conf ~/.config/kitty/kitty.conf
