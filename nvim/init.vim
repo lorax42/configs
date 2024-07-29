@@ -101,28 +101,35 @@ let g:deoplete#enable_at_startup = 1
 " Plugin code goes here.
 call plug#begin('~/.vim/plugged')
 
-    Plug 'dense-analysis/ale'
+
+    " UTILS
     Plug 'preservim/nerdtree'
-    "Plug 'vim-airline/vim-airline'
-    "Plug 'vim-airline/vim-airline-themes'
-    Plug 'Freedzone/kerbovim'
-    Plug 'morhetz/gruvbox'
-    Plug 'arrufat/vala.vim'
+    "Plug 'nvim-tree/nvim-tree.lua'
     Plug 'tpope/vim-surround'
     "Plug 'numToStr/Comment.nvim'
-    Plug 'tpope/vim-fugitive'
     Plug 'c0r73x/vimdir.vim'
-    "Plug 'nvim-tree/nvim-tree.lua'
+    Plug 'tpope/vim-fugitive'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+    " THEMES
+    "Plug 'vim-airline/vim-airline'
+    "Plug 'vim-airline/vim-airline-themes'
+    
+    Plug 'morhetz/gruvbox'
     Plug 'Mofiqul/dracula.nvim'
     Plug 'folke/tokyonight.nvim'
     Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
+    " LANG TOOLS
+    Plug 'dense-analysis/ale'
     Plug 'honza/vim-snippets'
     Plug 'SirVer/ultisnips'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } "pip3 install --user --upgrade pynvim
 
+    " LANG SUPPORT
+    Plug 'Freedzone/kerbovim'
+    Plug 'arrufat/vala.vim'
     Plug 'lervag/vimtex'
-
     "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
