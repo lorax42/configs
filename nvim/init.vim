@@ -109,7 +109,7 @@ call plug#begin('~/.vim/plugged')
     "Plug 'numToStr/Comment.nvim'
     Plug 'c0r73x/vimdir.vim'
     Plug 'tpope/vim-fugitive'
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " needs fzf optionally needs bat
 
     " THEMES
     "Plug 'vim-airline/vim-airline'
