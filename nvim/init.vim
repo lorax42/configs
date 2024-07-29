@@ -95,8 +95,8 @@ let g:deoplete#enable_at_startup = 1
 
 " junegunn/fzf
 " Initialize configuration dictionary
-let g:fzf_vim = {}
-let g:fzf_vim.command_prefix = 'Fzf'
+"let g:fzf_vim = {}
+"let g:fzf_vim.command_prefix = 'Fzf'
 
 " }}}
 
@@ -114,7 +114,10 @@ call plug#begin('~/.vim/plugged')
     "Plug 'numToStr/Comment.nvim'
     Plug 'c0r73x/vimdir.vim'
     Plug 'tpope/vim-fugitive'
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " needs fzf optionally needs bat
+    "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " needs fzf optionally needs bat
+    "Plug 'junegunn/fzf.vim'
+    "Plug 'nvim-lua/plenary.nvim'
+    "Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 
     " THEMES
     "Plug 'vim-airline/vim-airline'
