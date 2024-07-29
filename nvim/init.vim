@@ -121,6 +121,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'SirVer/ultisnips'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } "pip3 install --user --upgrade pynvim
 
+    Plug 'lervag/vimtex'
+
     "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
