@@ -217,6 +217,11 @@ set statusline+=\ %F\ [%M]\ %Y\ %R
 " Use a divider to separate the left side from the right side.
 set statusline+=%=
 
+" fugitive
+set statusline+=%{FugitiveStatusline()}
+
+set statusline+=%=
+
 " Status line right side.
 set statusline+=\ row:\ %l\ col:\ %c\ percent:\ %p%%
 
