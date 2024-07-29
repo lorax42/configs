@@ -21,6 +21,14 @@ install(){
 
             cp nvim/init.vim ~/.config/nvim/
             ;;
+        ~/.config/nvim/init.lua)
+            if [[ ! ( -d ~/.config/nvim ) ]]
+            then
+                mkdir ~/.config/nvim
+            fi
+
+            cp nvim/init.lua ~/.config/nvim/
+            ;;
         ~/.config/kitty/kitty.conf)
             if [[ ! ( -d ~/.config/kitty ) ]]
             then
@@ -67,4 +75,5 @@ check(){
 check .vimrc ~/.vimrc
 check starship.toml ~/.config/starship.toml
 check nvim/init.vim ~/.config/nvim/init.vim
+check nvim/init.lua ~/.config/nvim/init.lua
 check kitty.conf ~/.config/kitty/kitty.conf
