@@ -12,14 +12,4 @@ vim.g.localleader = "\\"
 -- require('keys')      -- Keymaps
 -- require('plug')      -- Plugins
 
-Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
-
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
-
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-let g:deoplete#enable_at_startup = 1
 

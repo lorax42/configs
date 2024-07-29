@@ -108,11 +108,16 @@ call plug#begin('~/.vim/plugged')
     Plug 'folke/tokyonight.nvim'
     Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
-    " the following are in the init.lua file
-    "Plug 'SirVer/ultisnips'
-    "Plug 'honza/vim-snippets'
-    "    
-    "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'honza/vim-snippets'
+    Plug 'SirVer/ultisnips'
+
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsJumpForwardTrigger="<c-b>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+    let g:UltiSnipsEditSplit="vertical"
+
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    let g:deoplete#enable_at_startup = 1
 
     "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
