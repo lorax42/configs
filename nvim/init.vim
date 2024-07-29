@@ -84,14 +84,19 @@ set clipboard+=unnamedplus
 "let g:airline_powerline_fonts=1
 "let g:airline=0
 
-"SirVer/ultisnips
+" SirVer/ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
-"Shougo/deoplete.nvim
+" Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
+
+" junegunn/fzf
+" Initialize configuration dictionary
+let g:fzf_vim = {}
+let g:fzf_vim.command_prefix = 'Fzf'
 
 " }}}
 
