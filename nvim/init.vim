@@ -118,6 +118,7 @@ call plug#begin('~/.vim/plugged')
     "Plug 'junegunn/fzf.vim'
     "Plug 'nvim-lua/plenary.nvim'
     "Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
+    "Plug 'm4xshen/autoclose.nvim'
 
     " THEMES
     "Plug 'vim-airline/vim-airline'
