@@ -118,7 +118,7 @@ call plug#begin('~/.vim/plugged')
     "Plug 'junegunn/fzf.vim'
     "Plug 'nvim-lua/plenary.nvim'
     "Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
-    "Plug 'm4xshen/autoclose.nvim'
+    Plug 'm4xshen/autoclose.nvim'
 
     " THEMES
     "Plug 'vim-airline/vim-airline'
@@ -151,15 +151,15 @@ call plug#end()
 " MAPPINGS --------------------------------------------------------------- {{{
 
 " Mappings code goes here.
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-"inoremap {<CR> {<CR>}<ESC>O<TAB>
-inoremap {<CR> {<CR>}<ESC>O
-"inoremap {;<CR> {<CR>};<ESC>O<TAB>
-inoremap {;<CR> {<CR>};<ESC>O
+"inoremap " ""<left>
+"inoremap ' ''<left>
+"inoremap ( ()<left>
+"inoremap [ []<left>
+"inoremap { {}<left>
+""inoremap {<CR> {<CR>}<ESC>O<TAB>
+"inoremap {<CR> {<CR>}<ESC>O
+""inoremap {;<CR> {<CR>};<ESC>O<TAB>
+"inoremap {;<CR> {<CR>};<ESC>O
 
 nnoremap :W :w
 nnoremap :Q :q
