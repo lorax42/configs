@@ -100,18 +100,49 @@ let g:deoplete#enable_at_startup = 1
 
 " Enable Treesitter
 let g:treesitter_ensure_installed = 'all'
+let g:treesitter_highlight = 1
+
+" Add TreeSitter languages
+if has('nvim-0.9.0')
+  " Enable highlighting for all TreeSitter-supported file types
+  TSUpdateSync
+  " List of supported languages: https://github.com/nvim-treesitter/nvim-treesitter/blob/master/docs/languages.md
+  " Replace the list below with the languages you want to enable
+  let g:treesitter_langs = [
+    \ 'c',
+    \ 'cpp',
+    \ 'bash',
+    \ 'python',
+    \ 'markdown',
+    \ 'rust',
+    \ 'html',
+    \ 'css',
+    \ 'php',
+    \ 'javascript',
+    \ 'json',
+    \ 'lua',
+    \ 'vim',
+  \ ]
+
+  " Enable TreeSitter for the specified languages
+  for lang in g:treesitter_langs
+    if !exists('g:loaded_treesitter_' . lang)
+      execute 'TSInstall ' . lang
+    endif
+  endfor
+endif
 
 " Add languages
-call treesitter#highlight#enable('c')
-call treesitter#highlight#enable('cpp')
-call treesitter#highlight#enable('bash')
-call treesitter#highlight#enable('python')
-call treesitter#highlight#enable('markdown')
-call treesitter#highlight#enable('rust')
-call treesitter#highlight#enable('html')
-call treesitter#highlight#enable('css')
-call treesitter#highlight#enable('php')
-call treesitter#highlight#enable('javascript')
+"call treesitter#highlight#enable('c')
+"call treesitter#highlight#enable('cpp')
+"call treesitter#highlight#enable('bash')
+"call treesitter#highlight#enable('python')
+"call treesitter#highlight#enable('markdown')
+"call treesitter#highlight#enable('rust')
+"call treesitter#highlight#enable('html')
+"call treesitter#highlight#enable('css')
+"call treesitter#highlight#enable('php')
+"call treesitter#highlight#enable('javascript')
 
 " }}}
 
