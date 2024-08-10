@@ -98,6 +98,21 @@ let g:deoplete#enable_at_startup = 1
 "let g:fzf_vim = {}
 "let g:fzf_vim.command_prefix = 'Fzf'
 
+" Enable Treesitter
+let g:treesitter_ensure_installed = 'all'
+
+" Add languages
+call treesitter#highlight#enable('c')
+call treesitter#highlight#enable('cpp')
+call treesitter#highlight#enable('bash')
+call treesitter#highlight#enable('python')
+call treesitter#highlight#enable('markdown')
+call treesitter#highlight#enable('rust')
+call treesitter#highlight#enable('html')
+call treesitter#highlight#enable('css')
+call treesitter#highlight#enable('php')
+call treesitter#highlight#enable('javascript')
+
 " }}}
 
 
@@ -139,7 +154,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'Freedzone/kerbovim'
     Plug 'arrufat/vala.vim'
     Plug 'lervag/vimtex'
-    "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 
