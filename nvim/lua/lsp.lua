@@ -10,7 +10,7 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = { 'pylsp', 'lua_ls', 'rust_analyzer' },
+    ensure_installed = { 'pylsp', 'lua_ls', 'rust_analyzer', 'clangd', 'bashls' },
 })
 
 -- Set different settings for different languages' LSP
@@ -60,6 +60,22 @@ end
 -- 1. use `:Mason` to install corresponding LSP
 -- 2. add configuration below
 lspconfig.pylsp.setup({
+	on_attach = on_attach,
+})
+
+lspconfig.lua_ls.setup({
+	on_attach = on_attach,
+})
+
+lspconfig.rust_analyzer.setup({
+	on_attach = on_attach,
+})
+
+lspconfig.clangd.setup({
+	on_attach = on_attach,
+})
+
+lspconfig.bashls.setup({
 	on_attach = on_attach,
 })
 

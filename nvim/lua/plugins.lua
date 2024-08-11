@@ -50,12 +50,12 @@ require("lazy").setup({
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
-    
+
     -- treesitter
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        config = function () 
+        config = function ()
             local configs = require("nvim-treesitter.configs")
 
             configs.setup({
@@ -74,7 +74,7 @@ require("lazy").setup({
                 },
                 sync_install = false,
                 highlight = { enable = true },
-                indent = { enable = true },  
+                indent = { enable = true },
             })
         end
     },
@@ -114,6 +114,14 @@ require("lazy").setup({
     {
         'm4xshen/autoclose.nvim'
     },
+
+    -- {
+    --     'windwp/nvim-autopairs',
+    --     event = "InsertEnter",
+    --     config = true
+    --     -- use opts = {} for passing setup options
+    --     -- this is equalent to setup({}) function
+    -- },
 
     -- kerbovim
     {
