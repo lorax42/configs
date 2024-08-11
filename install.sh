@@ -53,7 +53,7 @@ check(){
     src=$1
     dest=$2
 
-    diff $src $dest >> /dev/null
+    diff -r $src $dest >> /dev/null
     if [[ "$?" -ne "0" ]]
     then
         if [[ -f $dest ]]
