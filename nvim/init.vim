@@ -105,7 +105,7 @@ let g:treesitter_highlight = 1
 " Add TreeSitter languages
 if has('nvim-0.9.0')
   " Enable highlighting for all TreeSitter-supported file types
-  TSUpdateSync
+  execute 'TSUpdateSync'
   " List of supported languages: https://github.com/nvim-treesitter/nvim-treesitter/blob/master/docs/languages.md
   " Replace the list below with the languages you want to enable
   let g:treesitter_langs = [
