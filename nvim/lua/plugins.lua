@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    -- Theme
     {
         "catppuccin/nvim",
         name = "catppuccin",
@@ -38,6 +39,7 @@ require("lazy").setup({
 			require("config.nvim-cmp")
 		end,
 	},
+
 	-- Code snippet engine
 	{
 		"L3MON4D3/LuaSnip",
@@ -48,5 +50,85 @@ require("lazy").setup({
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
+    
+    -- treesitter
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        config = function () 
+            local configs = require("nvim-treesitter.configs")
+
+            configs.setup({
+                ensure_installed = {
+                    "c",
+                    "cpp",
+                    "rust",
+                    "python",
+                    "lua",
+                    "vim",
+                    "vimdoc",
+                    "html",
+                    "css",
+                    "php",
+                    "javascript",
+                },
+                sync_install = false,
+                highlight = { enable = true },
+                indent = { enable = true },  
+            })
+        end
+    },
+
+    -- ALE
+    {
+        'dense-analysis/ale',
+        config = function()
+            -- Configuration goes here.
+            local g = vim.g
+
+            g.ale_ruby_rubocop_auto_correct_all = 1
+
+            g.ale_linters = {
+                ruby = {'rubocop', 'ruby'},
+                lua = {'lua_language_server'}
+            }
+        end
+    },
+
+    -- NerdTree
+    {
+        'preservim/nerdtree'
+    },
+
+    -- VimDir
+    {
+        'c0r73x/vimdir.vim'
+    },
+
+    -- VimFugitive
+    {
+        'tpope/vim-fugitive'
+    },
+
+    -- autoclose
+    {
+        'm4xshen/autoclose.nvim'
+    },
+
+    -- kerbovim
+    {
+        'm4xshen/autoclose.nvim'
+    },
+
+    -- vala support
+    {
+        'arrufat/vala.vim'
+    },
+
+    -- vimtex
+    {
+        'lervag/vimtex'
+    },
+
 })
 
