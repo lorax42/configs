@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 
+### INSTALL FILE ###
 install(){
     src=$1
     dest=$2
@@ -29,7 +30,9 @@ install(){
 
             cp nvim/init.lua ~/.config/nvim/
             ;;
-        ~/.config/nvim)
+        ~/.config/nvim/)
+            rm -rf ~/.config/nvim/*
+            cp -r nvim/ ~/.config/
             ;;
         ~/.config/kitty/kitty.conf)
             if [[ ! ( -d ~/.config/kitty ) ]]
@@ -45,6 +48,7 @@ install(){
     esac
 }
 
+### CHECK IF FILE EXISTS ###
 check(){
     src=$1
     dest=$2
@@ -74,11 +78,39 @@ check(){
     fi
 }
 
-check .vimrc ~/.vimrc
-check starship.toml ~/.config/starship.toml
+### MAIN FUNCITON ###
+main(){
+    case $1 in
+        vim)
+            check .vimrc ~/.vimrc
+            ;;
+        nvim)
+            #check nvim/init.vim ~/.config/nvim/init.vim
+            #check nvim/init.lua ~/.config/nvim/init.lua
+            check nvim/ ~/.config/nvim/
+            ;;
+        starship)
+            check starship.toml ~/.config/starship.toml
+            ;;
+        kitty)
+            check kitty.conf ~/.config/kitty/kitty.conf
+            ;;
+        all)
+            check .vimrc ~/.vimrc
 
-#check nvim/init.vim ~/.config/nvim/init.vim
-#check nvim/init.lua ~/.config/nvim/init.lua
-check nvim/ ~/.config/nvim/
+            #check nvim/init.vim ~/.config/nvim/init.vim
+            #check nvim/init.lua ~/.config/nvim/init.lua
+            check nvim/ ~/.config/nvim/
 
-check kitty.conf ~/.config/kitty/kitty.conf
+            check starship.toml ~/.config/starship.toml
+
+            check kitty.conf ~/.config/kitty/kitty.conf
+            ;;
+        *)
+            echo "ERROR: invalid input \"$1\""
+            ;;
+    esac
+}
+
+main $1
+
