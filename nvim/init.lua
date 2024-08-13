@@ -1,7 +1,7 @@
 -- https://martinlwx.github.io/en/config-neovim-from-scratch/
+require('plugins')
 require('options')
 require('keymaps')
-require('plugins')
 require('colorscheme')
 require('lsp')
 
