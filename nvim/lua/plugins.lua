@@ -127,19 +127,6 @@ require("lazy").setup({
         -- this is equalent to setup({}) function
     },
 
-    -- autoclose
-    -- {
-    --     'm4xshen/autoclose.nvim'
-    -- },
-
-    -- {
-    --     'windwp/nvim-autopairs',
-    --     event = "InsertEnter",
-    --     config = true
-    --     -- use opts = {} for passing setup options
-    --     -- this is equalent to setup({}) function
-    -- },
-
     -- kerbovim
     {
         'm4xshen/autoclose.nvim'
@@ -159,7 +146,11 @@ require("lazy").setup({
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.8',
         -- or                              , branch = '0.1.x',
-      dependencies = { 'nvim-lua/plenary.nvim' }
+        dependencies = { 'nvim-lua/plenary.nvim' },
+
+        config = function()
+            require('telescope').setup()
+        end
     },
 })
 
