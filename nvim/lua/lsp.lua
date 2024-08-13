@@ -10,7 +10,19 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = { 'pylsp', 'lua_ls', 'rust_analyzer', 'clangd', 'bashls' },
+    ensure_installed = {
+        'pylsp',            -- Python
+        'lua_ls',           -- Lua
+        'rust_analyzer',    -- Rust
+        'clangd',           -- C/C++
+        'bashls',           -- Bash
+        'marksman',         -- Markdown
+        'vimls',            -- Vim/Vimscript
+        'html',             -- HTML
+        'jsonls',           -- JSON
+        'texlab',           -- LaTeX
+        'phpactor',         -- PHP
+    },
 })
 
 -- Set different settings for different languages' LSP
