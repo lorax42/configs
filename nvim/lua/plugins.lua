@@ -118,10 +118,19 @@ require("lazy").setup({
         'tpope/vim-fugitive'
     },
 
-    -- autoclose
+    -- autopairs
     {
-        'm4xshen/autoclose.nvim'
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
+        -- use opts = {} for passing setup options
+        -- this is equalent to setup({}) function
     },
+
+    -- autoclose
+    -- {
+    --     'm4xshen/autoclose.nvim'
+    -- },
 
     -- {
     --     'windwp/nvim-autopairs',
