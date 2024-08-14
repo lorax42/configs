@@ -72,22 +72,46 @@ end
 -- 1. use `:Mason` to install corresponding LSP
 -- 2. add configuration below
 lspconfig.pylsp.setup({
-	on_attach = on_attach,
+    on_attach = on_attach,
 })
 
 lspconfig.lua_ls.setup({
-	on_attach = on_attach,
+    on_attach = on_attach,
 })
 
 lspconfig.rust_analyzer.setup({
-	on_attach = on_attach,
+    on_attach = on_attach,
 })
 
 lspconfig.clangd.setup({
-	on_attach = on_attach,
+    on_attach = on_attach,
 })
 
 lspconfig.bashls.setup({
-	on_attach = on_attach,
+    on_attach = on_attach,
+})
+
+lspconfig.marksman.setup({
+    on_attach = on_attach,
+})
+
+lspconfig.vimls.setup({
+    on_attach = on_attach,
+})
+
+lspconfig.html.setup({
+    on_attach = on_attach,
+})
+
+lspconfig.jsonls.setup({
+    on_attach = on_attach,
+})
+
+lspconfig.texlab.setup({
+    on_attach = on_attach,
+})
+
+lspconfig.phpactor.setup({
+    on_attach = on_attach,
 })
 
