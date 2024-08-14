@@ -44,6 +44,28 @@ vim.keymap.set('n', '<leader>fi', builtin.current_buffer_fuzzy_find, {})
 vim.keymap.set('n', '<leader>fz', builtin.builtin, {})
 vim.keymap.set('n', '<leader>fm', builtin.man_pages, {})
 
+-- NERDTree
+vim.keymap.set('n', '<C-f>', ':NERDTree<CR>', {})
+
+-- transparent background
+local function trans()
+    vim.api.nvim_set_hl(0, 'Normal', {bg = 'none'})
+    vim.api.nvim_set_hl(0, 'NormalFloat', {bg = 'none'})
+end
+
+local function notrans()
+    local colorscheme = vim.cmd.colorscheme()
+    vim.cmd.colorscheme(colorscheme)
+end
+
+-- vim.keymap.set('n', ':trans', trans(), {})
+-- vim.keymap.set('n', ':notrans', notrans(), {})
+
+-- tabe keybindings
+vim.keymap.set('n', '<leader>t', ':tabe<CR>')
+vim.keymap.set('n', '<leader><tab>', 'gt')
+--vim.keymap.set('n', '<leader><shift><tab>', 'gT')
+
 -----------------
 -- Visual mode --
 -----------------
