@@ -152,5 +152,10 @@ require("lazy").setup({
             require('telescope').setup()
         end
     },
+
+    -- formatter
+    --{
+    --    'mhartington/formatter.nvim',
+    --},
 })
 
