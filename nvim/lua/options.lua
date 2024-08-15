@@ -25,3 +25,5 @@ vim.opt.smartcase = true            -- but make it case sensitive if an uppercas
 
 vim.opt.clipboard = "unnamedplus"   -- use system clipboard
 
+vim.api.nvim_command('filetype plugin indent on')
+
