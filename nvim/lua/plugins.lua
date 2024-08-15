@@ -157,5 +157,19 @@ require("lazy").setup({
     --{
     --    'mhartington/formatter.nvim',
     --},
+
+    -- autocomment
+    {
+        'numToStr/Comment.nvim',
+        opts = {
+            -- add any options here
+            padding = false,
+        },
+
+        config = function()
+            require('Comment').setup()
+        end
+    },
+
 })
 
