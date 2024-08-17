@@ -66,6 +66,9 @@ vim.keymap.set('n', '<leader>t', ':tabe<CR>')
 vim.keymap.set('n', '<leader><tab>', 'gt')
 --vim.keymap.set('n', '<leader><shift><tab>', 'gT')
 
+--vim.keymap.set('n', '<C-S>', 'gt')
+--vim.keymap.set('n', '<C-S-Tab>', 'gT')
+
 -----------------
 -- Visual mode --
 -----------------
