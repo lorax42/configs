@@ -12,6 +12,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    -- popup notifications
+    {
+        'rcarriga/nvim-notify',
+        config = function ()
+            vim.notify = require("notify")
+        end
+    },
+
     -- Theme
     {
         "catppuccin/nvim",
@@ -207,6 +215,7 @@ require("lazy").setup({
         --end,
     },
 
+    --  floating terminal window
     {
         'voldikss/vim-floaterm',
     },

@@ -1,6 +1,6 @@
 local is_installed = vim.fn.executable('rg') == 1
 
 if not is_installed then
-  print('ripgrep is not installed!')
+  vim.notify('ripgrep is not installed!', 'error')
 end
 
