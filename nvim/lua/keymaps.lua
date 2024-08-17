@@ -49,8 +49,8 @@ vim.keymap.set('n', '<C-f>', ':NERDTree<CR>', {})
 
 -- transparent background
 local function trans()
-    vim.api.nvim_set_hl(0, 'Normal', {bg = 'none'})
-    vim.api.nvim_set_hl(0, 'NormalFloat', {bg = 'none'})
+    vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
 end
 
 local function notrans()
@@ -68,6 +68,9 @@ vim.keymap.set('n', '<leader><tab>', 'gt')
 
 --vim.keymap.set('n', '<C-S>', 'gt')
 --vim.keymap.set('n', '<C-S-Tab>', 'gT')
+
+-- Floaterm
+vim.keymap.set('n', '<leader>x', ':FloatermToggle<CR>')
 
 -----------------
 -- Visual mode --
