@@ -48,22 +48,22 @@ vim.keymap.set('n', '<leader>fm', builtin.man_pages, {})
 vim.keymap.set('n', '<C-f>', ':NERDTree<CR>', {})
 
 -- transparent background
-local function trans()
-    vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-    vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-end
+--local function trans()
+--    vim.api.nvim_set_hl(0, 'Normal', {bg = 'none'})
+--    vim.api.nvim_set_hl(0, 'NormalFloat', {bg = 'none'})
+--end
 
-local function notrans()
-    local colorscheme = vim.cmd.colorscheme()
-    vim.cmd.colorscheme(colorscheme)
-end
+--local function notrans()
+--    local colorscheme = vim.cmd.colorscheme()
+--    vim.cmd.colorscheme(colorscheme)
+--end
 
 -- vim.keymap.set('n', ':trans', trans(), {})
 -- vim.keymap.set('n', ':notrans', notrans(), {})
 
 -- tabe keybindings
 vim.keymap.set('n', '<leader>t', ':tabe<CR>')
-vim.keymap.set('n', '<leader><tab>', 'gt')
+--vim.keymap.set('n', '<leader><tab>', 'gt')
 --vim.keymap.set('n', '<leader><shift><tab>', 'gT')
 
 --vim.keymap.set('n', '<C-S>', 'gt')
@@ -71,6 +71,29 @@ vim.keymap.set('n', '<leader><tab>', 'gt')
 
 -- Floaterm
 vim.keymap.set('n', '<leader>x', ':FloatermToggle<CR>')
+
+-- cokeline
+local map = vim.api.nvim_set_keymap
+
+map("n", "<S-Tab>", "<Plug>(cokeline-focus-prev)", { silent = true })
+map("n", "<Tab>", "<Plug>(cokeline-focus-next)", { silent = true })
+map("n", "<Leader>p", "<Plug>(cokeline-switch-prev)", { silent = true })
+map("n", "<Leader>n", "<Plug>(cokeline-switch-next)", { silent = true })
+
+for i = 1, 9 do
+  map(
+    "n",
+    ("<F%s>"):format(i),
+    ("<Plug>(cokeline-focus-%s)"):format(i),
+    { silent = true }
+  )
+  map(
+    "n",
+    ("<Leader>%s"):format(i),
+    ("<Plug>(cokeline-switch-%s)"):format(i),
+    { silent = true }
+  )
+end
 
 -----------------
 -- Visual mode --
