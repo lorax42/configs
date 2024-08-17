@@ -150,6 +150,7 @@ require("lazy").setup({
         dependencies = { 'nvim-lua/plenary.nvim' },
 
         config = function()
+            require('ripgrep')
             require('telescope').setup()
         end
     },
@@ -204,6 +205,10 @@ require("lazy").setup({
         --        indent = { char = '┆' },
         --    }
         --end,
+    },
+
+    {
+        'voldikss/vim-floaterm',
     },
 })
 
