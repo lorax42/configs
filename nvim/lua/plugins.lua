@@ -40,6 +40,7 @@ require("lazy").setup({
 		end,
 	},
 
+    -- collection of snippets
     {
         'honza/vim-snippets'
     },
@@ -59,7 +60,7 @@ require("lazy").setup({
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
 
-    -- treesitter
+    -- better syntax highlighting
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
@@ -87,7 +88,7 @@ require("lazy").setup({
         end
     },
 
-    -- ALE
+    -- linter
     {
         'dense-analysis/ale',
         config = function()
@@ -103,17 +104,17 @@ require("lazy").setup({
         end
     },
 
-    -- NerdTree
+    -- file tree
     {
         'preservim/nerdtree'
     },
 
-    -- VimDir
+    -- file management in textfile
     {
         'c0r73x/vimdir.vim'
     },
 
-    -- VimFugitive
+    -- git helper
     {
         'tpope/vim-fugitive'
     },
@@ -127,7 +128,7 @@ require("lazy").setup({
         -- this is equalent to setup({}) function
     },
 
-    -- kerbovim
+    -- kerboscript support
     {
         'm4xshen/autoclose.nvim'
     },
@@ -137,12 +138,12 @@ require("lazy").setup({
         'arrufat/vala.vim'
     },
 
-    -- vimtex
+    -- latex support
     {
         'lervag/vimtex'
     },
 
-    -- telescope
+    -- fuzzy finder
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.8',
         -- or                              , branch = '0.1.x',
@@ -158,7 +159,23 @@ require("lazy").setup({
     --    'mhartington/formatter.nvim',
     --},
 
-    -- autocomment
+    -- highlight instances of word under cursor
+    {
+        'RRethy/vim-illuminate'
+    },
+
+    -- better tab management
+    {
+        "willothy/nvim-cokeline",
+        dependencies = {
+            "nvim-lua/plenary.nvim",        -- Required for v0.4.0+
+            "nvim-tree/nvim-web-devicons", -- If you want devicons
+            --"stevearc/resession.nvim"       -- Optional, for persistent history
+        },
+        config = true
+    },
+
+    -- Easy Commenting
     {
         'numToStr/Comment.nvim',
         opts = {
@@ -166,10 +183,27 @@ require("lazy").setup({
             padding = false,
         },
 
-        config = function()
-            require('Comment').setup()
-        end
+        --config = function()
+        --    require('Comment').setup()
+        --end
     },
 
+    -- indentation guide
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        ---@module "ibl"
+        ---@type ibl.config
+        opts = {
+            indent = { char = '┆' },
+        },
+
+        --config = function ()
+        --    require("ibl").setup{
+        --        --indent = { char = '│' },
+        --        indent = { char = '┆' },
+        --    }
+        --end,
+    },
 })
 
