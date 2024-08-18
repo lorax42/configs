@@ -72,7 +72,7 @@ cmp.setup({
   -- Set source precedence
   sources = cmp.config.sources({
       { name = 'nvim_lsp' },    -- For nvim-lsp
-      { name = 'vimtex' },      -- For path completion
+      { name = 'vimtex' },      -- vimtex support [added by me]
       { name = 'luasnip' },     -- For luasnip user
       { name = 'buffer' },      -- For buffer word completion
       { name = 'path' },        -- For path completion
