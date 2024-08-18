@@ -48,6 +48,11 @@ require("lazy").setup({
 		end,
 	},
 
+    -- LSP manager
+	"williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim",
+	"neovim/nvim-lspconfig",
+
     -- collection of snippets
     {
         'honza/vim-snippets'
@@ -59,15 +64,16 @@ require("lazy").setup({
 		version = "v2.*",
         dependencies = { "rafamadriz/friendly-snippets" },
         config = function ()
-            --require("luasnip.loaders.from_vscode").lazy_load({paths = "~/.local/share/nvim/lazy/friendly-snippets/package.json"})
-            require("luasnip.loaders.from_vscode").lazy_load()
+            require("luasnip.loaders.from_vscode").lazy_load({
+                include = {
+                    "c",
+                    "cpp",
+                    "python",
+                    "php",
+                }
+            })
         end
 	},
-
-    -- LSP manager
-	"williamboman/mason.nvim",
-	"williamboman/mason-lspconfig.nvim",
-	"neovim/nvim-lspconfig",
 
     -- better syntax highlighting
     {
@@ -205,15 +211,9 @@ require("lazy").setup({
         ---@module "ibl"
         ---@type ibl.config
         opts = {
+            --indent = { char = '│' },
             indent = { char = '┆' },
         },
-
-        --config = function ()
-        --    require("ibl").setup{
-        --        --indent = { char = '│' },
-        --        indent = { char = '┆' },
-        --    }
-        --end,
     },
 
     --  floating terminal window
