@@ -64,14 +64,7 @@ require("lazy").setup({
 		version = "v2.*",
         dependencies = { "rafamadriz/friendly-snippets" },
         config = function ()
-            require("luasnip.loaders.from_vscode").lazy_load({
-                include = {
-                    "c",
-                    "cpp",
-                    "python",
-                    "php",
-                }
-            })
+            require("luasnip.loaders.from_vscode").lazy_load()
         end
 	},
 
