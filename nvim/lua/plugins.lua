@@ -64,6 +64,7 @@ require("lazy").setup({
 		version = "v2.*",
         dependencies = { "rafamadriz/friendly-snippets" },
         config = function ()
+            require("luasnip").setup()
             require("luasnip.loaders.from_vscode").lazy_load()
         end
 	},
@@ -212,6 +213,22 @@ require("lazy").setup({
     --  floating terminal window
     {
         'voldikss/vim-floaterm',
+    },
+
+    {
+        'lewis6991/gitsigns.nvim',
+        config = function ()
+            require('gitsigns').setup()
+        end
+    },
+
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        config = function ()
+            require("lualine").setup()
+        end,
+        options = { theme = 'nightfly' }
     },
 })
 
