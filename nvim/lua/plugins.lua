@@ -51,7 +51,22 @@ require("lazy").setup({
     -- LSP manager
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
-	"neovim/nvim-lspconfig",
+
+    {
+        "neovim/nvim-lspconfig",
+
+        dependencies = {
+            'nvimdev/lspsaga.nvim',
+
+            config = function()
+                require('lspsaga').setup({})
+            end,
+
+            dependencies = {
+                'nvim-tree/nvim-web-devicons',     -- optional
+            }
+        }
+    },
 
     -- collection of snippets
     {
