@@ -11,7 +11,10 @@ cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            if not luasnip then
+                return
+            end
+            luasnip.lsp_expand(args.body) -- For `luasnip` users.
         end,
     },
     mapping = cmp.mapping.preset.insert({
@@ -31,6 +34,8 @@ cmp.setup({
             -- Hint: if the completion menu is visible select next one
             if cmp.visible() then
                 cmp.select_next_item()
+            elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
             elseif has_words_before() then
                 cmp.complete()
             else
@@ -71,11 +76,11 @@ cmp.setup({
 
   -- Set source precedence
   sources = cmp.config.sources({
-      { name = 'nvim_lsp' },    -- For nvim-lsp
-      { name = 'vimtex' },      -- vimtex support [added by me]
-      { name = 'luasnip' },     -- For luasnip user
-      { name = 'buffer' },      -- For buffer word completion
-      { name = 'path' },        -- For path completion
+        { name = 'nvim_lsp' },    -- For nvim-lsp
+        { name = 'luasnip' },     -- For luasnip user
+        { name = 'vimtex' },      -- vimtex support [added by me]
+        { name = 'buffer' },      -- For buffer word completion
+        { name = 'path' },        -- For path completion
   })
 })
 
