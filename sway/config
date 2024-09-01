@@ -50,8 +50,10 @@ floating_modifier $mod
 
 # start a terminal
 #i3-sensible-terminal
-bindsym $mod+Return exec xfce4-terminal
-bindsym Ctrl+Alt+t exec xfce4-terminal
+#bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec kitty
+#bindsym Ctrl+Alt+t exec xfce4-terminal
+bindsym Ctrl+Alt+t exec kitty
 bindsym Ctrl+Alt+f exec thunar
 
 bindsym $mod+Shift+l exec swaylock -c 000000
