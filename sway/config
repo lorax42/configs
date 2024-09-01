@@ -243,7 +243,7 @@ bar {
 
 # Display Wallpaper
 #exec_always feh --bg-fill ~/Pictures/wallpaper/Emerald-wallpaper_1920x1080.png
-exec_always swaybg -m fit -i /home/lloyd/Pictures/wallpaper/Emerald-wallpaper_1920x1080.png
+exec_always swaybg -m fit -i /home/lorax/Pictures/wallpaper/Emerald-wallpaper_1920x1080.png
 
 # Transparency with picom compositor
 #exec_always picom -f
