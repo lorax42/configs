@@ -106,10 +106,28 @@ main(){
 
             check kitty.conf ~/.config/kitty/kitty.conf
             ;;
-        *)
-            echo "ERROR: invalid input \"$1\""
+        "")
+            echo -e "1: all"
+            echo -e "2: base"
+
+            read -p "> " x
+
+            case "$x" in
+                1)
+                    echo 1
+                    ;;
+                2)
+                    echo 2
+                    ;;
+                *)
+                    echo invalid input
+                    ;;
+            esac
             ;;
-    esac
+        *)
+        echo "ERROR: invalid input \"$1\""
+        ;;
+esac
 }
 
 main $1
