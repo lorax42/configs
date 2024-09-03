@@ -35,12 +35,19 @@ install(){
             cp -r nvim/ ~/.config/
             ;;
         ~/.config/kitty/kitty.conf)
-            if [[ ! ( -d ~/.config/kitty ) ]]
+            if [[ ! -d ~/.config/kitty ]]
             then
                 mkdir ~/.config/kitty
             fi
 
             cp kitty.conf ~/.config/kitty
+            ;;
+        ~/.config/sway/)
+            if [[ ! -d ~/.config/sway ]]; then
+                mkdir ~/.config/sway
+            fi
+
+            cp sway/config ~/.config/sway
             ;;
         *)
             echo "ERROR: \"$dest\" not found"
@@ -95,7 +102,10 @@ main(){
         kitty)
             check kitty.conf ~/.config/kitty/kitty.conf
             ;;
-        all)
+        sway)
+            check sway/ ~/.config/sway/
+            ;;
+        base)
             check .vimrc ~/.vimrc
 
             #check nvim/init.vim ~/.config/nvim/init.vim
