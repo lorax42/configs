@@ -1,5 +1,12 @@
 #!/usr/bin/bash
 
+f_base(){
+    check .vimrc ~/.vimrc
+    check nvim/ ~/.config/nvim/
+    check starship.toml ~/.config/starship.toml
+    check kitty.conf ~/.config/kitty/kitty.conf
+}
+
 ### INSTALL FILE ###
 install(){
     src=$1
@@ -106,31 +113,23 @@ main(){
             check sway/ ~/.config/sway/
             ;;
         base)
-            check .vimrc ~/.vimrc
-
-            #check nvim/init.vim ~/.config/nvim/init.vim
-            #check nvim/init.lua ~/.config/nvim/init.lua
-            check nvim/ ~/.config/nvim/
-
-            check starship.toml ~/.config/starship.toml
-
-            check kitty.conf ~/.config/kitty/kitty.conf
+            f_base
             ;;
         "")
-            echo -e "1: all"
+            echo -e "1: exit"
             echo -e "2: base"
 
             read -p "> " x
 
             case "$x" in
                 1)
-                    echo 1
+                    exit 1
                     ;;
                 2)
-                    echo 2
+                    f_base
                     ;;
                 *)
-                    echo invalid input
+                    echo "ERROR: invalid input \"$x\""
                     ;;
             esac
             ;;
