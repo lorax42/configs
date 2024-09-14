@@ -193,9 +193,9 @@ require("lazy").setup({
     },
 
     -- file tree
-    {
-        'preservim/nerdtree'
-    },
+    --{
+    --    'preservim/nerdtree'
+    --},
 
     -- file management in textfile
     {
@@ -331,5 +331,30 @@ require("lazy").setup({
     --        { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
     --    }
     --},
+
+    {
+        'nvim-tree/nvim-tree.lua',
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+        },
+
+        config = function ()
+            -- setup with some options
+            require("nvim-tree").setup({
+                sort = {
+                    sorter = "case_sensitive",
+                },
+                view = {
+                    width = 30,
+                },
+                renderer = {
+                    group_empty = true,
+                },
+                filters = {
+                    dotfiles = true,
+                },
+            })
+        end,
+    },
 })
 
