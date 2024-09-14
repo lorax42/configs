@@ -27,7 +27,5 @@ vim.opt.hlsearch = true             -- do not highlight matches
 vim.opt.ignorecase = true           -- ignore case in searches by default
 vim.opt.smartcase = true            -- but make it case sensitive if an uppercase is entered
 
-vim.opt.clipboard = "unnamedplus"   -- use system clipboard
-
 vim.api.nvim_command('filetype plugin indent on')
 
