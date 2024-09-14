@@ -45,7 +45,10 @@ vim.keymap.set('n', '<leader>fm', builtin.man_pages, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 
 -- NERDTree
-vim.keymap.set('n', '<C-f>', ':NERDTree<CR>', {})
+--vim.keymap.set('n', '<C-f>', ':NERDTree<CR>', {})
+
+-- NvimTree
+vim.keymap.set('n', '<C-f>', ':NvimTreeFocus<CR>', {})
 
 -- transparent background
 --local function trans()
