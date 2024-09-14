@@ -4,7 +4,7 @@ f_base(){
     check .vimrc ~/.vimrc
     check nvim/ ~/.config/nvim/
     check starship.toml ~/.config/starship.toml
-    check kitty.conf ~/.config/kitty/kitty.conf
+    check kitty/ ~/.config/kitty/
 }
 
 ### INSTALL FILE ###
@@ -21,40 +21,18 @@ install(){
         ~/.config/starship.toml)
             cp starship.toml ~/.config/ # install starship.toml
             ;;
-        ~/.config/nvim/init.vim)
-            if [[ ! ( -d ~/.config/nvim ) ]]
-            then
-                mkdir ~/.config/nvim
-            fi
-
-            cp nvim/init.vim ~/.config/nvim/
-            ;;
-        ~/.config/nvim/init.lua)
-            if [[ ! ( -d ~/.config/nvim ) ]]
-            then
-                mkdir ~/.config/nvim
-            fi
-
-            cp nvim/init.lua ~/.config/nvim/
-            ;;
         ~/.config/nvim/)
             rm -rf ~/.config/nvim/*
             cp -r nvim/ ~/.config/
             ;;
-        ~/.config/kitty/kitty.conf)
-            if [[ ! -d ~/.config/kitty ]]
-            then
-                mkdir ~/.config/kitty
-            fi
-
-            cp kitty.conf ~/.config/kitty
+        ~/.config/kitty/)
+            cp kitty/ ~/.config/kitty/
             ;;
         ~/.config/sway/)
-            if [[ ! -d ~/.config/sway ]]; then
-                mkdir ~/.config/sway
-            fi
-
-            cp sway/config ~/.config/sway
+            cp -r sway/ ~/.config/sway/
+            ;;
+        ~/.config/superfile/)
+            cp -r superfile/ ~/.config/superfile/
             ;;
         *)
             echo "ERROR: \"$dest\" not found"
@@ -70,25 +48,10 @@ check(){
     diff -r $src $dest >> /dev/null
     if [[ "$?" -ne "0" ]]
     then
-        if [[ -f $dest ]]
-        then
-            echo "Do you want to replace \"$dest\"?"
-            echo -n "(Y/n): "
-            read yn
-
-            if [[ "$yn" == "y" || "$yn" == "Y" || "$yn" == "" ]]
-            then
-                install $src $dest
-            elif [[ "$yn" == "n" || "$yn" == "N" ]]
-            then
-                echo "Cancelling install of \"$dest\"..."
-            else
-                echo "ERROR: invalid input \"$yn\""
-            fi
-        else
-            install $src $dest
-        fi
+        install $src $dest
         echo "-------------------------"
+    else
+            echo "already newest version"
     fi
 }
 
@@ -107,10 +70,13 @@ main(){
             check starship.toml ~/.config/starship.toml
             ;;
         kitty)
-            check kitty.conf ~/.config/kitty/kitty.conf
+            check kitty/ ~/.config/kitty/
             ;;
         sway)
             check sway/ ~/.config/sway/
+            ;;
+        superfile | spf)
+            check superfile/ ~/.config/superfile/
             ;;
         base)
             f_base
