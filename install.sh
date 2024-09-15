@@ -41,6 +41,10 @@ install(){
             rm -rf ~/.config/superfile/
             cp -r superfile/ ~/.config/
             ;;
+        ~/.config/wofi/)
+            rm -rf ~/.config/wofi/
+            cp -r wofi/ ~/.config/wofi/
+            ;;
         *)
             echo "ERROR: \"$dest\" not found"
             ;;
@@ -86,13 +90,17 @@ main(){
             elif [[ ! -f /usr/bin/waybar ]]; then
                 echo "waybar not installed"
                 exit
+            elif [[ ! $(wofi -h) ]]; then
+                echo "wofi not installed"
+                exit
             fi
 
             check sway/ ~/.config/sway/
             check waybar/ ~/.config/waybar/
+            check wofi/ ~/.config/wofi/
             ;;
         waybar)
-            elif [[ ! -f /usr/bin/waybar ]]; then
+            if [[ ! -f /usr/bin/waybar ]]; then
                 echo "waybar not installed"
                 exit
             fi
