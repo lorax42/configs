@@ -19,20 +19,23 @@ install(){
             cp .vimrc ~/ # install .vimrc
             ;;
         ~/.config/starship.toml)
-            cp starship.toml ~/.config/ # install starship.toml
+            cp starship.toml ~/.config/
             ;;
         ~/.config/nvim/)
             rm -rf ~/.config/nvim/*
             cp -r nvim/ ~/.config/
             ;;
         ~/.config/kitty/)
-            cp kitty/ ~/.config/kitty/
+            rm -rf ~/.config/kitty/
+            cp kitty/ ~/.config/
             ;;
         ~/.config/sway/)
-            cp -r sway/ ~/.config/sway/
+            rm -rf ~/.config/sway/
+            cp -r sway/ ~/.config/
             ;;
         ~/.config/superfile/)
-            cp -r superfile/ ~/.config/superfile/
+            rm -rf ~/.config/superfile/
+            cp -r superfile/ ~/.config/
             ;;
         *)
             echo "ERROR: \"$dest\" not found"
