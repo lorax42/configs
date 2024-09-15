@@ -27,7 +27,7 @@ install(){
             ;;
         ~/.config/kitty/)
             rm -rf ~/.config/kitty/
-            cp kitty/ ~/.config/
+            cp -r kitty/ ~/.config/
             ;;
         ~/.config/sway/)
             rm -rf ~/.config/sway/
