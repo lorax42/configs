@@ -80,10 +80,23 @@ main(){
             check kitty/ ~/.config/kitty/
             ;;
         sway)
+            if [[ ! $(sway -h) ]]; then
+                echo "sway not installed"
+                exit
+            elif [[ ! -f /usr/bin/waybar ]]; then
+                echo "waybar not installed"
+                exit
+            fi
+
             check sway/ ~/.config/sway/
             check waybar/ ~/.config/waybar/
             ;;
         waybar)
+            elif [[ ! -f /usr/bin/waybar ]]; then
+                echo "waybar not installed"
+                exit
+            fi
+
             check waybar/ ~/.config/waybar/
             ;;
         superfile | spf)
