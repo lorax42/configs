@@ -87,7 +87,8 @@ button:hover {
 #mode,
 #idle_inhibitor,
 #scratchpad,
-#mpd {
+#mpd,
+#custom-exit {
     padding: 0 10px;
     color: #ffffff;
     background-color: rgba(255, 255, 255, 0.2);

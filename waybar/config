@@ -13,7 +13,8 @@
     ],
 
     "modules-center": [
-        "sway/window"
+        //"sway/window"
+        "clock",
     ],
 
     "modules-right": [
@@ -29,8 +30,9 @@
         //"sway/language",
         "battery",
         //"battery#bat2",
-        "clock",
-        "tray"
+        //"clock",
+        "tray",
+        "custom/exit",
     ],
 
     //Modules configuration
@@ -215,6 +217,12 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+
+    "custom/exit": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "sway exit"
     }
 }
 
