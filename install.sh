@@ -12,7 +12,7 @@ install(){
     src=$1
     dest=$2
 
-	echo "Installing \"$src\" to \"$dest\"..."
+	echo "+++ installing \"$src\" to \"$dest\"..."
 
     case $dest in
         ~/.vimrc)
@@ -33,6 +33,10 @@ install(){
             rm -rf ~/.config/sway/
             cp -r sway/ ~/.config/
             ;;
+        ~/.config/waybar/)
+            rm -rf ~/.config/waybar/
+            cp -r waybar/ ~/.config/
+            ;;
         ~/.config/superfile/)
             rm -rf ~/.config/superfile/
             cp -r superfile/ ~/.config/
@@ -52,10 +56,10 @@ check(){
     if [[ "$?" -ne "0" ]]
     then
         install $src $dest
-        echo "-------------------------"
     else
-            echo "already newest version"
+            echo "=== $dest already newest version"
     fi
+    echo "-------------------------"
 }
 
 ### MAIN FUNCITON ###
@@ -77,6 +81,10 @@ main(){
             ;;
         sway)
             check sway/ ~/.config/sway/
+            check waybar/ ~/.config/waybar/
+            ;;
+        waybar)
+            check waybar/ ~/.config/waybar/
             ;;
         superfile | spf)
             check superfile/ ~/.config/superfile/
