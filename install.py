@@ -54,7 +54,7 @@ def main():
         else:
             print(f"E: invalid index = {index}")
 
-    elif sys.argv[1] == "b" or sys.argv[1] == "-b":
+    elif sys.argv[1] == "-b":
         for arg in sys.argv:
             # loop through bunles in list (skipping first (exit))
             for bundle in bundles[1:]:
