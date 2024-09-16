@@ -223,3 +223,7 @@ label:focus {
 #scratchpad.empty {
 	background-color: transparent;
 }
+
+#custom-exit {
+    background-color: rgba(255, 0, 0, 0.5);
+}
