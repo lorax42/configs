@@ -49,7 +49,7 @@ def main():
                 ex()
 
             for func in bundles[index][1]:
-                func[1]()
+                func()
 
         else:
             print(f"E: invalid index = {index}")
