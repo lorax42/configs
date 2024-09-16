@@ -57,7 +57,6 @@ def main():
     elif sys.argv[1] == "b" or sys.argv[1] == "-b":
         for arg in sys.argv:
             # loop through bunles in list (skipping first (exit))
-            print(bundles[1:])
             for bundle in bundles[1:]:
                 if bundle[0] == arg:
                     for func in bundle[1]:
