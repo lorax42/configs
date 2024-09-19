@@ -67,6 +67,12 @@ input * {
     xkb_layout "de"
 }
 
+input "wayland-pointer-seat" {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+}
+
 ### Key bindings
 #
 # Basics:
