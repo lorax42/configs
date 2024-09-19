@@ -29,6 +29,11 @@ include /etc/sway/config-vars.d/*
 #set $bg_img /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
 set $bg_img ~/.config/sway/img/Cyberpunk-Background-HD-2357151896.jpg
 output * bg $bg_img fill
+
+# Status Bar:
+exec_always killall waybar
+exec_always waybar
+
 #
 # Example configuration:
 #
@@ -239,9 +244,5 @@ default_floating_border pixel 2
 
 gaps inner 5
 gaps outer 0
-
-# Status Bar:
-exec_always killall waybar
-exec_always waybar
 
 include /etc/sway/config.d/*
