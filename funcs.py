@@ -41,7 +41,7 @@ def install(src, dest):
 
 # function for vim
 def vim():
-    install("./.vimrc", f"{homedir}/.vimrc")
+    install("./vim/vimrc", f"{homedir}/.vimrc")
 
 
 # function for starship
