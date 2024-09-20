@@ -360,8 +360,13 @@ require("lazy").setup({
     {
         'norcalli/nvim-colorizer.lua',
         config = function ()
-            require'colorizer'.setup()
-        end
+            require'colorizer'.setup({
+                css = {
+                    css = true,
+                    mode = 'background',
+                },
+            })
+        end,
     },
 })
 
