@@ -1,6 +1,7 @@
 import os
 import sys
 import shutil
+import filecmp
 
 
 homedir = os.path.expanduser('~')
@@ -12,29 +13,55 @@ def ex():
     sys.exit(1)
 
 
+# compare directory recursively
+# return True if dirs diff
+def has_diff(dir_cmp):
+    diff = dir_cmp.left_only + dir_cmp.right_only + dir_cmp.diff_files
+
+    if diff:
+        return True
+
+    return any([has_diff(sub_dir_cmp) for sub_dir_cmp in dir_cmp.subdirs.values()])
+
+
 # install files
 def install(src, dest):
-    if os.path.exists(dest) and os.path.exists(src):
-        print(f"overwrite {dest}?")
-        if not input("(y to continue) ") in "yY\n":
-            return 1
-    else:
-        print(f"E: src = {src}; dest = {dest}; one or both of the files don't exist")
-        return 1
-
-    print(f"installing {src} => {dest}...")
-
-    if os.path.isfile(dest) and os.path.isfile(src):
-        os.remove(dest)
-        shutil.copyfile(src, dest)
-    elif os.path.isdir(dest) and os.path.isdir(src):
-        shutil.rmtree(dest)
-        shutil.copytree(src, dest)
-    else:
-        print(f"E: src = {src}; dest = {dest}; file type not matching")
+    # check for existence of src path
+    if not os.path.exists(src):
+        print(f"E: {src} doesn't exist")
         ex()
 
-    print("-------------------------")
+    # check for src is dir and existence of dest path
+    if os.path.isdir(src) and not os.path.exists(dest):
+        os.makedirs(dest)  # make dir if missing
+
+    # check for matching filetype
+    if os.path.isfile(dest) and os.path.isfile(src):
+        # check for diffs between src and dest
+        if filecmp.cmp(src, dest):
+            print(f"no diff between {src} and {dest}")
+            return 0
+
+        # install file
+        print(f"installing {src} => {dest}...")
+        os.remove(dest)
+        shutil.copyfile(src, dest)
+
+    # check for matching filetype
+    elif os.path.isdir(dest) and os.path.isdir(src):
+        # check for diffs between src and dest
+        if not has_diff(filecmp.dircmp(src, dest)):
+            print(f"no diff between {src} and {dest}")
+            return 0
+
+        # install dir
+        print(f"installing {src} => {dest}...")
+        shutil.rmtree(dest)
+        shutil.copytree(src, dest)
+
+    else:
+        print(f"E: {src} and {dest} file type not matching")
+        ex()
 
     return 0
 
