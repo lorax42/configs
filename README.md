@@ -1,5 +1,12 @@
 # configs
+
 These are my dotfiles.
+
+<!--toc:start-->
+- [configs](#configs)
+  - [Install](#install)
+  - [Future](#future)
+<!--toc:end-->
 
 ## Install
 See `dotfiles.py` for available dotfiles and bundles.
@@ -14,5 +21,5 @@ cd configs
 ```
 
 ## Future
-- only replace dotfiles, that don't match the repo's
+- [x] only replace dotfiles, that don't match the repo's
 
