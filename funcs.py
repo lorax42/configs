@@ -39,7 +39,8 @@ def install(src, dest):
     if os.path.isfile(dest) and os.path.isfile(src):
         # check for diffs between src and dest
         if filecmp.cmp(src, dest):
-            print(f"no diff between {src} and {dest}")
+            #print(f"no diff between {src} and {dest}")
+            print(f"== {src} == {dest} ==")
             return 0
 
         # install file
@@ -51,7 +52,8 @@ def install(src, dest):
     elif os.path.isdir(dest) and os.path.isdir(src):
         # check for diffs between src and dest
         if not has_diff(filecmp.dircmp(src, dest)):
-            print(f"no diff between {src} and {dest}")
+            #print(f"no diff between {src} and {dest}")
+            print(f"== {src} == {dest} ==")
             return 0
 
         # install dir
