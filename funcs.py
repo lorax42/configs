@@ -73,7 +73,7 @@ def vim():
 
 # function for starship
 def starship():
-    install("./starship.toml", f"{homedir}/.config/starship.toml")
+    install("./starship/starship.toml", f"{homedir}/.config/starship.toml")
 
 
 # function for nvim
