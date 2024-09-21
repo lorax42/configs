@@ -90,7 +90,8 @@ require("lazy").setup({
             require ('mason-nvim-lint').setup({
                 ensure_installed = {
                     'bacon',            -- bacon linter for rust is not available in nvim-lint, so it's specified to be directly installed from the mason's registry
-                    'vale',             -- Markdown, LaTeX
+                    --'vale',             -- Markdown, LaTeX
+                    'markdownlint',
                     'cpplint',          -- C/C++
                     'phpstan',          -- PHP
                     'proselint',        -- Text
