@@ -1,10 +1,10 @@
-import os
+import pathlib as pl
 import sys
-import shutil
-import filecmp
+import shutil as st
+import filecmp as cmp
 
 
-homedir = os.path.expanduser('~')
+homedir = pl.Path.home()
 
 
 # exit program
@@ -21,43 +21,49 @@ def has_diff(dir_cmp):
     if diff:
         return True
 
-    return any([has_diff(sub_dir_cmp) for sub_dir_cmp in dir_cmp.subdirs.values()])
+    return any(
+        has_diff(sub_dir_cmp) for sub_dir_cmp in dir_cmp.subdirs.values()
+    )
 
 
 # install files
 def install(src, dest):
+    src = pl.Path(src).absolute()
+    dest = pl.Path(dest).absolute()
+
     # check for existence of src path
-    if not os.path.exists(src):
+    if not src.exists():
         print(f"E: {src} doesn't exist")
         ex()
 
     # check for src is dir and existence of dest path
-    if os.path.isdir(src) and not os.path.exists(dest):
-        os.makedirs(dest)  # make dir if missing
+    if src.is_dir():
+        # make dir and parents if missing
+        dest.mkdir(exist_ok=True, parents=True)
 
     # check for matching filetype
-    if os.path.isfile(dest) and os.path.isfile(src):
+    if dest.is_file() and src.is_file():
         # check for diffs between src and dest
-        if filecmp.cmp(src, dest):
+        if cmp.cmp(src, dest):
             print(f"no diff between {src} and {dest}")
             return 0
 
         # install file
         print(f"installing {src} => {dest}...")
-        os.remove(dest)
-        shutil.copyfile(src, dest)
+        dest.unlink()
+        st.copyfile(src, dest)
 
     # check for matching filetype
-    elif os.path.isdir(dest) and os.path.isdir(src):
+    elif dest.is_dir() and src.is_dir():
         # check for diffs between src and dest
-        if not has_diff(filecmp.dircmp(src, dest)):
+        if not has_diff(cmp.dircmp(src, dest)):
             print(f"no diff between {src} and {dest}")
             return 0
 
         # install dir
         print(f"installing {src} => {dest}...")
-        shutil.rmtree(dest)
-        shutil.copytree(src, dest)
+        st.rmtree(dest)
+        st.copytree(src, dest)
 
     else:
         print(f"E: {src} and {dest} file type not matching")
