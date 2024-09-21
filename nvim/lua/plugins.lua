@@ -105,8 +105,8 @@ require("lazy").setup({
         'mfussenegger/nvim-lint',
         config = function ()
             require('lint').linters_by_ft = {
-                markdown = {'vale',},
-                latex = {'vale',},
+                markdown = {'markdownlint',},
+                --latex = {'vale',},
                 c = {'cpplint',},
                 cpp = {'cpplint',},
                 php = {'phpstan',},
