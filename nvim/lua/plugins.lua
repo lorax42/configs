@@ -78,9 +78,10 @@ require("lazy").setup({
             end,
 
             dependencies = {
+                'nvim-treesitter/nvim-treesitter', -- optional
                 'nvim-tree/nvim-web-devicons',     -- optional
             }
-        }
+        },
     },
 
     -- linter using language protokoll from mason
@@ -131,20 +132,20 @@ require("lazy").setup({
     },
 
     -- linter
-    {
-        'dense-analysis/ale',
-        config = function()
-            -- Configuration goes here.
-            local g = vim.g
-
-            g.ale_ruby_rubocop_auto_correct_all = 1
-
-            g.ale_linters = {
-                ruby = {'rubocop', 'ruby'},
-                lua = {'lua_language_server'}
-            }
-        end
-    },
+    --{
+    --    'dense-analysis/ale',
+    --    config = function()
+    --        -- Configuration goes here.
+    --        local g = vim.g
+    --
+    --        g.ale_ruby_rubocop_auto_correct_all = 1
+    --
+    --        g.ale_linters = {
+    --            ruby = {'rubocop', 'ruby'},
+    --            lua = {'lua_language_server'}
+    --        }
+    --    end
+    --},
 
     -- collection of snippets
     {
