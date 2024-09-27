@@ -98,6 +98,9 @@ for i = 1, 9 do
   )
 end
 
+-- lsp
+vim.keymap.set('n', '<leader>e', function()     vim.diagnostic.open_float(nil, { focusable = false })  end)
+
 -----------------
 -- Visual mode --
 -----------------
