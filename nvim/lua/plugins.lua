@@ -370,6 +370,16 @@ require("lazy").setup({
                     css = true,
                     mode = 'background',
                 },
+
+                html = {
+                    html = true,
+                    mode = 'background',
+                },
+
+                php = {
+                    php = true,
+                    mode = 'background',
+                },
             })
         end,
     },
