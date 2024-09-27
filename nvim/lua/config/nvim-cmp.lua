@@ -30,12 +30,17 @@ cmp.setup({
 
         -- A super tab
         -- sourc: https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#luasnip
+        ['<C-Space>'] = cmp.mapping(function (fallback)
+            if luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+            end
+        end, {'i', 's'}),
         ["<Tab>"] = cmp.mapping(function(fallback)
             -- Hint: if the completion menu is visible select next one
             if cmp.visible() then
                 cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
+            --elseif luasnip.expand_or_jumpable() then
+            --    luasnip.expand_or_jump()
             elseif has_words_before() then
                 cmp.complete()
             else
