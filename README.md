@@ -21,5 +21,6 @@ cd configs
 ```
 
 ## Future
-- [x] only replace dotfiles, that don't match the repo's
+- [ ] show configs that differ
+- [ ] show diffs
 
