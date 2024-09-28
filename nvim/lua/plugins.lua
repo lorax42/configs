@@ -1,13 +1,13 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -15,7 +15,7 @@ require("lazy").setup({
     -- popup notifications
     {
         'rcarriga/nvim-notify',
-        config = function ()
+        config = function()
             vim.notify = require("notify")
         end
     },
@@ -27,31 +27,31 @@ require("lazy").setup({
         priority = 1000
     },
 
-	-- Vscode-like pictograms
-	{
-		"onsails/lspkind.nvim",
-		event = { "VimEnter" },
-	},
+    -- Vscode-like pictograms
+    {
+        "onsails/lspkind.nvim",
+        event = { "VimEnter" },
+    },
 
-	-- Auto-completion engine
-	{
-		"hrsh7th/nvim-cmp",
-		dependencies = {
-			"lspkind.nvim",
-			"hrsh7th/cmp-nvim-lsp", -- lsp auto-completion
-			"hrsh7th/cmp-buffer", -- buffer auto-completion
-			"hrsh7th/cmp-path", -- path auto-completion
-			"hrsh7th/cmp-cmdline", -- cmdline auto-completion
-		},
-		config = function()
-			require("config.nvim-cmp")
-		end,
-	},
+    -- Auto-completion engine
+    {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+            "lspkind.nvim",
+            "hrsh7th/cmp-nvim-lsp", -- lsp auto-completion
+            "hrsh7th/cmp-buffer", -- buffer auto-completion
+            "hrsh7th/cmp-path", -- path auto-completion
+            "hrsh7th/cmp-cmdline", -- cmdline auto-completion
+        },
+        config = function()
+            require("config.nvim-cmp")
+        end,
+    },
 
     -- LSP/DAP/Linter/Formatter Installer
     {
         "williamboman/mason.nvim",
-        config = function ()
+        config = function()
             require('mason').setup({
                 ui = {
                     icons = {
@@ -87,16 +87,16 @@ require("lazy").setup({
     -- linter using language protokoll from mason
     {
         "rshkarin/mason-nvim-lint",
-        config = function ()
-            require ('mason-nvim-lint').setup({
+        config = function()
+            require('mason-nvim-lint').setup({
                 ensure_installed = {
-                    'bacon',            -- bacon linter for rust is not available in nvim-lint, so it's specified to be directly installed from the mason's registry
+                    'bacon', -- bacon linter for rust is not available in nvim-lint, so it's specified to be directly installed from the mason's registry
                     --'vale',             -- Markdown, LaTeX
                     'markdownlint',
-                    'cpplint',          -- C/C++
-                    'phpstan',          -- PHP
-                    'proselint',        -- Text
-                    'pylint',           -- Python
+                    'cpplint',   -- C/C++
+                    'phpstan',   -- PHP
+                    'proselint', -- Text
+                    'pylint',    -- Python
                 },
             })
         end,
@@ -105,20 +105,19 @@ require("lazy").setup({
     -- linter
     {
         'mfussenegger/nvim-lint',
-        config = function ()
+        config = function()
             require('lint').linters_by_ft = {
-                markdown = {'markdownlint',},
+                markdown = { 'markdownlint', },
                 --latex = {'vale',},
-                c = {'cpplint',},
-                cpp = {'cpplint',},
-                php = {'phpstan',},
-                text = {'proselint',},
-                python = {'pylint',},
+                c = { 'cpplint', },
+                cpp = { 'cpplint', },
+                php = { 'phpstan', },
+                text = { 'proselint', },
+                python = { 'pylint', },
             }
 
             vim.api.nvim_create_autocmd({ "BufWritePost" }, {
                 callback = function()
-
                     -- try_lint without arguments runs the linters defined in `linters_by_ft`
                     -- for the current filetype
                     require("lint").try_lint()
@@ -152,25 +151,25 @@ require("lazy").setup({
         'honza/vim-snippets'
     },
 
-	-- Code snippet engine
-	{
-		"L3MON4D3/LuaSnip",
-		version = "v2.*",
+    -- Code snippet engine
+    {
+        "L3MON4D3/LuaSnip",
+        version = "v2.*",
         dependencies = {
             "rafamadriz/friendly-snippets",
             "saadparwaiz1/cmp_luasnip",
         },
-        config = function ()
+        config = function()
             require("luasnip").setup()
             require("luasnip.loaders.from_vscode").lazy_load()
         end
-	},
+    },
 
     -- better syntax highlighting
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        config = function ()
+        config = function()
             local configs = require("nvim-treesitter.configs")
 
             configs.setup({
@@ -235,7 +234,8 @@ require("lazy").setup({
 
     -- fuzzy finder
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.8',
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.8',
         -- or                              , branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim' },
 
@@ -259,7 +259,7 @@ require("lazy").setup({
     {
         "willothy/nvim-cokeline",
         dependencies = {
-            "nvim-lua/plenary.nvim",        -- Required for v0.4.0+
+            "nvim-lua/plenary.nvim",       -- Required for v0.4.0+
             "nvim-tree/nvim-web-devicons", -- If you want devicons
             --"stevearc/resession.nvim"       -- Optional, for persistent history
         },
@@ -284,7 +284,7 @@ require("lazy").setup({
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
         ---@module "ibl"
----@diagnostic disable-next-line: undefined-doc-name
+        ---@diagnostic disable-next-line: undefined-doc-name
         ---@type ibl.config
         opts = {
             --indent = { char = '│' },
@@ -295,11 +295,15 @@ require("lazy").setup({
     --  floating terminal window
     {
         'voldikss/vim-floaterm',
+        config = function()
+            vim.g.floaterm_borderchars = "─│─│╭╮╯╰"
+            vim.g.floaterm_titleposition = "center"
+        end
     },
 
     {
         'lewis6991/gitsigns.nvim',
-        config = function ()
+        config = function()
             require('gitsigns').setup()
         end
     },
@@ -307,7 +311,7 @@ require("lazy").setup({
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = function ()
+        config = function()
             require("lualine").setup()
         end,
         options = { theme = 'nightfly' }
@@ -340,7 +344,7 @@ require("lazy").setup({
             'nvim-tree/nvim-web-devicons',
         },
 
-        config = function ()
+        config = function()
             -- setup with some options
             require("nvim-tree").setup({
                 sort = {
@@ -361,10 +365,20 @@ require("lazy").setup({
 
     {
         'norcalli/nvim-colorizer.lua',
-        config = function ()
-            require'colorizer'.setup({
+        config = function()
+            require 'colorizer'.setup({
                 css = {
                     css = true,
+                    mode = 'background',
+                },
+
+                html = {
+                    html = true,
+                    mode = 'background',
+                },
+
+                php = {
+                    php = true,
                     mode = 'background',
                 },
             })
@@ -381,5 +395,8 @@ require("lazy").setup({
     --    end,
     --    dependencies = { {'nvim-tree/nvim-web-devicons'}}
     --},
-})
 
+    {
+        'mbbill/undotree',
+    },
+})
