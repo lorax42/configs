@@ -399,4 +399,8 @@ require("lazy").setup({
     {
         'mbbill/undotree',
     },
+
+    {
+        'rust-lang/rust.vim',
+    },
 })
