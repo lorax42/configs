@@ -12,6 +12,7 @@ funcs = [
     ['sway', sway],
     ['waybar', waybar],
     ['wofi', wofi],
+    ['bash', bash],
 ]
 
 all_funcs = []
