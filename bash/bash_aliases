@@ -1,0 +1,41 @@
+### ALIASES
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+alias l="ls"
+alias ll="ls -lh"
+alias la="ls -A"
+#alias la="ls -1sha --group-directories-first"
+alias lla="ls -lhA"
+alias update="sudo apt update && sudo apt upgrade -y && flatpak update -y && sudo apt autoremove -y && sudo apt autoclean && rustup update"
+alias rm="rm -I"
+alias cp="cp -i"
+alias mv="mv -i"
+
+if [[ $(which nvim) ]]; then
+    alias v="nvim"
+fi
+
+if [[ $(which python3) ]]; then
+    alias py="python3"
+fi
+
+if [[ $(which batcat) ]]; then
+    alias bat="batcat"
+fi
+
+if [[ $(which git) ]]; then
+    alias gs="echo 'using alias gs' && git status"
+    alias ga="echo 'using alias ga' && git add "
+    alias gaa="echo 'using alias gaa' && git add ."
+    alias gc="echo 'using alias gc' && git commit"
+    alias gcm="echo 'using alias gcm' && git commit -m "
+    alias gp="echo 'using alias gp' && git pull"
+    alias gP="echo 'using alias gP' && git push"
+fi
+
+# WINDOWS C/C++
+alias wingcc="x86_64-w64-mingw32-gcc"
+alias wing++="x86_64-w64-mingw32-g++"
+

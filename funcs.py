@@ -36,6 +36,10 @@ def install(src, dest):
         print(f"E: {src} doesn't exist")
         ex()
 
+    # check for existence of dest path
+    if not dest.exists():
+        dest.touch()
+
     # check for src is dir and existence of dest path
     if src.is_dir():
         # make dir and parents if missing
@@ -110,3 +114,9 @@ def waybar():
 # function for wofi
 def wofi():
     install("./wofi/", f"{homedir}/.config/wofi/")
+
+
+# function for bash
+def bash():
+    install("./bash/bashrc", f"{homedir}/.bashrc")
+    install("./bash/bash_aliases", f"{homedir}/.bash_aliases")
