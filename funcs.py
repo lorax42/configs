@@ -120,3 +120,8 @@ def wofi():
 def bash():
     install("./bash/bashrc", f"{homedir}/.bashrc")
     install("./bash/bash_aliases", f"{homedir}/.bash_aliases")
+
+
+# function for scripts
+def scripts():
+    install("./scripts/wifi.sh", f"{homedir}/.local/bin/wifi.sh")
