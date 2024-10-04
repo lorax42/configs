@@ -38,7 +38,7 @@ def install(src, dest):
 
     # check for existence of dest path
     if src.is_file():
-        dest.touch(exist_ok=True, parents=True)
+        dest.touch(exist_ok=True)
 
     # check for src is dir and existence of dest path
     if src.is_dir():
