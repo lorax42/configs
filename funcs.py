@@ -1,5 +1,5 @@
-import pathlib as pl
 import sys
+import pathlib as pl
 import shutil as st
 import filecmp as cmp
 
@@ -55,7 +55,8 @@ def install(src, dest):
         # install file
         print(f"installing {src} => {dest}...")
         dest.unlink()
-        st.copyfile(src, dest)
+        # st.copyfile(src, dest)
+        st.copy2(src, dest)
 
     # check for matching filetype
     elif dest.is_dir() and src.is_dir():
