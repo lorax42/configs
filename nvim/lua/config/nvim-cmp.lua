@@ -30,9 +30,11 @@ cmp.setup({
 
         -- A super tab
         -- sourc: https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#luasnip
-        ['<C-Space>'] = cmp.mapping(function (fallback)
+        ['<C-Tab>'] = cmp.mapping(function (fallback)
             if luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
+            else
+                fallback()
             end
         end, {'i', 's'}),
         ["<Tab>"] = cmp.mapping(function(fallback)
@@ -47,10 +49,15 @@ cmp.setup({
                 fallback()
             end
         end, { "i", "s" }), -- i - insert mode; s - select mode
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
+        ["S-Tab"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
-            elseif luasnip.jumpable( -1) then
+            else
+                fallback()
+            end
+        end, {'i', 's'}),
+        ["<C-S-Tab>"] = cmp.mapping(function(fallback)
+            if luasnip.jumpable( -1) then
                 luasnip.jump( -1)
             else
                 fallback()
@@ -70,10 +77,14 @@ cmp.setup({
       -- customize the appearance of the completion menu
       format = function(entry, vim_item)
           vim_item.menu = ({
-              nvim_lsp = '[Lsp]',
-              luasnip = '[Luasnip]',
-              buffer = '[File]',
-              path = '[Path]',
+              -- nvim_lsp = '[Lsp]',
+              nvim_lsp = '󰿘',
+              -- luasnip = '[Luasnip]',
+              luasnip = '',
+              -- buffer = '[File]',
+              buffer = '',
+              -- path = '[Path]',
+              path = '',
           })[entry.source.name]
           return vim_item
       end,

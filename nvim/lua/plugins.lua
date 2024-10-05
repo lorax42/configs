@@ -160,8 +160,11 @@ require("lazy").setup({
             "saadparwaiz1/cmp_luasnip",
         },
         config = function()
-            require("luasnip").setup()
+            require("luasnip").setup({
+                history = true
+            })
             require("luasnip.loaders.from_vscode").lazy_load()
+            require("luasnip.loaders.from_vscode").load({ paths = { "./my-snippets" } }) -- Load snippets from snippets folder
         end
     },
 
@@ -219,7 +222,7 @@ require("lazy").setup({
 
     -- kerboscript support
     {
-        'm4xshen/autoclose.nvim'
+        'Freedzone/kerbovim'
     },
 
     -- vala support
@@ -271,7 +274,7 @@ require("lazy").setup({
         'numToStr/Comment.nvim',
         opts = {
             -- add any options here
-            padding = false,
+            padding = true,
         },
 
         --config = function()
