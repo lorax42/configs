@@ -124,7 +124,7 @@ PATH=$PATH:/home/$USER/.local/bin
 #alias arduino="arduino --port /dev/ttyUSB* --upload "
 
 # Rust stuff
-if [[ $(which cargo) ]]; then
+if [[ -f ~/.cargo/env ]]; then
     . "$HOME/.cargo/env"
 fi
 
