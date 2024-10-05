@@ -385,6 +385,16 @@ require("lazy").setup({
                     php = true,
                     mode = 'background',
                 },
+
+                config = {
+                    config = true,
+                    mode = 'background',
+                },
+
+                markdown = {
+                    markdown = true,
+                    mode = 'background',
+                },
             })
         end,
     },
