@@ -39,9 +39,9 @@ set $lock ~/.config/sway/lock.sh
 
 ### Idle configuration
 # Example configuration:
- # exec_always killall swayidle
- # exec_always swayidle -w \
- exec swayidle -w \
+exec_always killall swayidle
+# exec swayidle -w \
+exec_always swayidle -w \
           timeout 300 $lock \
           timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
           before-sleep $lock
