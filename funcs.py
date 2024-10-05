@@ -1,5 +1,5 @@
-import pathlib as pl
 import sys
+import pathlib as pl
 import shutil as st
 import filecmp as cmp
 
@@ -38,7 +38,7 @@ def install(src, dest):
 
     # check for existence of dest path
     if src.is_file():
-        dest.touch(exist_ok=True, parents=True)
+        dest.touch(exist_ok=True)
 
     # check for src is dir and existence of dest path
     if src.is_dir():
@@ -55,7 +55,8 @@ def install(src, dest):
         # install file
         print(f"installing {src} => {dest}...")
         dest.unlink()
-        st.copyfile(src, dest)
+        # st.copyfile(src, dest)
+        st.copy2(src, dest)
 
     # check for matching filetype
     elif dest.is_dir() and src.is_dir():
@@ -120,3 +121,8 @@ def wofi():
 def bash():
     install("./bash/bashrc", f"{homedir}/.bashrc")
     install("./bash/bash_aliases", f"{homedir}/.bash_aliases")
+
+
+# function for scripts
+def scripts():
+    install("./scripts/wifi.sh", f"{homedir}/.local/bin/wifi.sh")
