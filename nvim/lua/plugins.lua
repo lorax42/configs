@@ -413,11 +413,18 @@ require("lazy").setup({
     --    dependencies = { {'nvim-tree/nvim-web-devicons'}}
     --},
 
+    -- undotree
     {
         'mbbill/undotree',
     },
 
+    -- better rust integration
     {
         'rust-lang/rust.vim',
     },
+
+    -- peek definitions, implementations, references…
+    -- {
+    --     'dnlhc/glance.nvim'
+    -- },
 })
