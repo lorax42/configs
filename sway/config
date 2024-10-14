@@ -233,11 +233,11 @@ bindsym Print exec ~/.config/sway/screenshot.sh
 include ~/.config/sway/themes/catppuccin-mocha
 
 # Color shemes for windows 
-set $bgcolor    $surface0
+set $bgcolor    $base
 set $in-bgcolor $crust
 #set $text       #ffffff # already defined in themes/catppuccin-mocha
 set $u-bgcolor  $red
-set $indicator  $surface2
+set $indicator  $teal
 set $in-text    $overlay2
 
 #                       border          background      text            indicator (a line which shows where the next window will be placed)     
