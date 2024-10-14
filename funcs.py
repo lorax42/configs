@@ -112,6 +112,16 @@ def waybar():
     install("./waybar/", f"{homedir}/.config/waybar/")
 
 
+# function for waybar
+def waybar_sway():
+    install("./waybar_sway/", f"{homedir}/.config/waybar/")
+
+
+# function for waybar
+def waybar_hypr():
+    install("./waybar_hypr/", f"{homedir}/.config/waybar/")
+
+
 # function for wofi
 def wofi():
     install("./wofi/", f"{homedir}/.config/wofi/")
