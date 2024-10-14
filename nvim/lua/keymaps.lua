@@ -34,6 +34,9 @@ vim.keymap.set('i', '<A-UP>', '<ESC>ddkP==gi', opts)
 -- vim.keymap.set('n', '<ALT+j>', ':m+<CR>', opts)
 -- vim.keymap.set('n', '<ALT+k>', ':m-2<CR>', opts)
 
+-- disable highlighting
+vim.keymap.set('n', '<leader>h', ':noh<CR>', opts)
+
 -- telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>fz', builtin.builtin, {})
