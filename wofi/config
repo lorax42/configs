@@ -2,3 +2,5 @@ term=kitty
 allow_images=true
 insensitive=true
 no_actions=true
+height=50%
+width=20%
