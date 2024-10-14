@@ -169,13 +169,13 @@
 
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{signalStrength}% ",
+        "format-wifi": "{signalStrength}% 󰖩",
         //"format-wifi": "WIFI: {essid} ({signalStrength}%)",
         "format-ethernet": "{ipaddr}/{cidr} ",
         //"format-ethernet": "ETH: {ipaddr}/{cidr}",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
+        "format-disconnected": "󰖪",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
 
