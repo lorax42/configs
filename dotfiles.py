@@ -41,7 +41,7 @@ bundles = [
         'sway',
         [
             sway,
-            waybar,
+            waybar_sway,
             wofi,
         ]
     ],
