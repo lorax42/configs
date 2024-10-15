@@ -49,8 +49,18 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fk', builtin.keymaps, {})
 vim.keymap.set('n', '<leader>flr', builtin.lsp_references, {})
 
--- NERDTree
---vim.keymap.set('n', '<C-f>', ':NERDTree<CR>', {})
+-- git/gitsigns
+local gitsigns = require('gitsigns')
+vim.keymap.set('n', '<leader>gb', gitsigns.blame_line, {})
+vim.keymap.set('n', '<leader>gs', gitsigns.stage_hunk, {})
+vim.keymap.set('n', '<leader>gS', gitsigns.stage_buffer, {})
+vim.keymap.set('n', '<leader>gu', gitsigns.undo_stage_hunk, {})
+vim.keymap.set('n', '<leader>gd', gitsigns.preview_hunk, {})
+vim.keymap.set('n', '<leader>ga', ':Git add ', {})
+vim.keymap.set('n', '<leader>gA', ':Git add .', {})
+vim.keymap.set('n', '<leader>gc', ':Git commit<CR>', {})
+vim.keymap.set('n', '<leader>gp', ':Git pull<CR>', {})
+vim.keymap.set('n', '<leader>gP', ':Git push<CR>', {})
 
 -- NvimTree
 vim.keymap.set('n', '<C-f>', ':NvimTreeFocus<CR>', {})
