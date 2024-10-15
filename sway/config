@@ -28,6 +28,9 @@ output * bg $bg_img fill
 exec_always killall waybar
 exec_always waybar
 
+# auto tiling script
+exec_always python3 ~/.config/sway/autotiling/autotiling/main.py
+
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
@@ -237,13 +240,18 @@ set $bgcolor    $base
 set $in-bgcolor $crust
 #set $text       #ffffff # already defined in themes/catppuccin-mocha
 set $u-bgcolor  $red
-set $indicator  $peach
+set $border     $sky
+set $in-border  $overlay1
+# if no autotiling:
+# set $indicator  $peach
+# if autotiling:
+set $indicator  $border
 set $in-text    $overlay2
 
 #                       border          background      text            indicator        child_border
-client.focused          $bgcolor        $bgcolor        $text           $indicator       $sky
-client.unfocused        $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor      $overlay1
-client.focused_inactive $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor      $overlay1
+client.focused          $bgcolor        $bgcolor        $text           $indicator       $border
+client.unfocused        $in-bgcolor     $in-bgcolor     $in-text        $in-border       $in-border
+client.focused_inactive $in-bgcolor     $in-bgcolor     $in-text        $in-border       $in-border
 client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcolor       $u-bgcolor
 
 # window borders
