@@ -63,7 +63,7 @@ vim.keymap.set('n', '<leader>gp', ':Git pull<CR>', {})
 vim.keymap.set('n', '<leader>gP', ':Git push<CR>', {})
 
 -- NvimTree
-vim.keymap.set('n', '<C-f>', ':NvimTreeFocus<CR>', {})
+vim.keymap.set('n', '<C-f>', ':NvimTreeFocus<CR>', opts)
 
 -- transparent background
 --local function trans()
