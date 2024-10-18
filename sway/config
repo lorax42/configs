@@ -158,8 +158,19 @@ input "wayland-pointer-seat" {
     bindsym $mod+Shift+0 move container to workspace number 10
 
     # move to next/previous ws
-    bindsym $mod+Period workspace next
-    bindsym $mod+Comma workspace prev
+    # bindsym $mod+Period workspace next
+    # bindsym $mod+Comma workspace prev
+    # bindsym $mod+Shift+Period move container to workspace next, workspace next
+    # bindsym $mod+Shift+Comma move container to workspace prev, workspace previous
+
+    set $next_or_new swaymsg -r -t get_workspaces | jq -r --arg OUTPUT $(swaymsg -t get_outputs -r | jq -r '.[] | select(.focused == true) | .name') '(. | (max_by(.num) | .num)) as $max | [.[] | select(.output == $OUTPUT)] | (max_by(.num) | .num) as $maxOutput | (.[] | select(.focused == true) | .num) as $current | if $maxOutput > $current then "next_on_output" else $max + 1 end'
+    set $previous_or_first swaymsg -r -t get_workspaces | jq -r --arg OUTPUT $(swaymsg -t get_outputs -r | jq -r '.[] | select(.focused == true) | .name') '(. | (max_by(.num) | .num)) as $max | [.[] | select(.output == $OUTPUT)] | (min_by(.num) | .num) as $minOutput | (.[] | select(.focused == true) | .num) as $current | if $minOutput < $current then "prev_on_output" else $current end'
+
+    bindsym $mod+Period exec swaymsg "workspace $($next_or_new)"
+    bindsym $mod+Comma exec swaymsg "workspace $($previous_or_first)"
+
+    bindsym $mod+Shift+Period exec swaymsg "move container to workspace $($next_or_new), workspace next_on_output"
+    bindsym $mod+Shift+Comma exec swaymsg "move container to workspace $($previous_or_first), workspace prev_on_output"
 
     # for touchpad (sway >= v1.8)
     # bindgesture swipe:right workspace prev
