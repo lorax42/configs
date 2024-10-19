@@ -17,8 +17,8 @@ fi
 echo "v"
 
 echo "using grim..."
-grim -s0.5 lockimg.png
+grim -s0.5 ~/.config/sway/img/lockimg.png
 echo "returned $?"
 echo "using convert..."
-convert lockimg.png -blur 1 ~/.config/sway/img/lockimg.png
+convert ~/.config/sway/img/lockimg.png -blur 1 ~/.config/sway/img/lockimg.png
 echo "returned $?"
