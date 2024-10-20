@@ -35,7 +35,7 @@
     ],
 
     // Modules configuration
-    "sway/workspaces": {
+    "hyprland/workspaces": {
         "disable-scroll": false,
         "all-outputs": false,
         "format": "{icon}",
@@ -57,7 +57,7 @@
         }
     },
 
-    "sway/mode": {
+    "hyprland/submap": {
         "format": "<span style=\"italic\">{}</span>"
     },
     
@@ -218,7 +218,7 @@
     "custom/exit": {
         "format": "",
         "tooltip": false,
-        "on-click": "sway exit"
+        "on-click": "hyprctl notify 0 3000 0 'use Super+M to exit'"
     }
 }
 
