@@ -21,8 +21,9 @@ set $menu_aux wofi --show run| xargs swaymsg exec --
 include /etc/sway/config-vars.d/*
 
 ### Output configuration
-set $bg_img ~/.config/sway/img/Cyberpunk-Background-HD-2357151896.jpg
-output * bg $bg_img fill
+exec_always ~/.config/sway/wallpaper.sh
+# set $bg_img ~/.config/sway/img/Cyberpunk-Background-HD-2357151896.jpg
+# output * bg $bg_img fill
 
 # Status Bar:
 exec_always killall waybar
