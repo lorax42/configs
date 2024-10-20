@@ -27,4 +27,4 @@ swaylock\
     --image $img\
     --scaling fit\
     --indicator-caps-lock\
-    --config ~/.config/sway/swaylock.conf\
+    --config ~/.config/sway/swaylock.conf &
