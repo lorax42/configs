@@ -29,7 +29,8 @@ exec_always killall waybar
 exec_always waybar
 
 # auto tiling script
-exec_always python3 ~/.config/sway/autotiling/main.py
+# exec_always python3 ~/.config/sway/autotiling/main.py
+exec_always ~/.config/sway/autotiling.sh
 
 # Example configuration:
 #
