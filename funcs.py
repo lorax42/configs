@@ -102,6 +102,11 @@ def sway():
     install("./sway/", f"{homedir}/.config/sway/")
 
 
+# functiond for hyprland
+def hyprland():
+    install("./hypr/", f"{homedir}/.config/hypr/")
+
+
 # function for superfile
 def superfile():
     install("./superfile/", f"{homedir}/.config/superfile/")
