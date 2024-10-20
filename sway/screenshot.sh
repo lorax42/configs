@@ -8,9 +8,16 @@ elif [[ ! $(grim -h) ]]; then
     exit
 fi
 
-if [[ ! -d ~/Pictures/Screenshots/ ]]; then
-    mkdir ~/Pictures/Screenshots/
+SCREENSHOT_PATH=~/Pictures/Screenshots/
+if [[ ! -d $SCREENSHOT_PATH ]]; then
+    mkdir -p $SCREENSHOT_PATH
 fi
 
 FILENAME="screenshot_`date +%F_%H-%M-%S`"
-grim -g "$(slurp)" ~/Pictures/Screenshots/$FILENAME.png
+PIC_PATH=$SCREENSHOT_PATH$FILENAME.png
+
+if [[ "$1" =~ "select" ]]; then
+    grim -g "$(slurp)" $PIC_PATH
+else
+    grim $PIC_PATH
+fi
