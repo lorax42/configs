@@ -3,7 +3,7 @@
 clear
 
 if [[ ! $(which nmcli) ]]; then
-    echo "E: nmcli is installed"
+    echo "E: nmcli not installed"
 fi
 
 while true; do
@@ -21,12 +21,25 @@ while true; do
             echo "turning wifi $CMD..."
             nmcli radio wifi $CMD
             ;;
+        "")
+            case "$STAT" in
+                enabled)
+                    nmcli radio wifi off
+                    ;;
+                disabled)
+                    nmcli radio wifi on
+                    ;;
+                *)
+                    echo "E: invalid stat: $STAT"
+                    ;;
+            esac
+            ;;
         exit)
             echo "exiting..."
             break 
             ;;
         *)
-            echo "invalid input: $CMD"
+            echo "E: invalid input: $CMD"
             ;;
     esac
 
