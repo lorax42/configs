@@ -1,0 +1,6 @@
+Cyberpunk-Background-HD-2357151896.jpg
+Emerald-wallpaper_1920x1080.png
+
+this file must have the name of the wanted wallpaper at the beginning of it
+see wallpaper script in sway configs or www.github.com/lorax42/configs
+this file should be placed in ~/Pictures/wallpaper/
