@@ -11,6 +11,8 @@ funcs = [
     ['superfile', superfile],
     ['sway', sway],
     ['waybar', waybar],
+    ['waybar_sway', waybar_sway],
+    ['waybar_hypr', waybar_hypr],
     ['wofi', wofi],
     ['bash', bash],
     ['scripts', scripts],
