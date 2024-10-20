@@ -10,6 +10,7 @@ funcs = [
     ['kitty', kitty],
     ['superfile', superfile],
     ['sway', sway],
+    ['hyprland', hyprland]
     ['waybar', waybar],
     ['waybar_sway', waybar_sway],
     ['waybar_hypr', waybar_hypr],
@@ -44,6 +45,14 @@ bundles = [
         [
             sway,
             waybar_sway,
+            wofi,
+        ]
+    ],
+    [
+        'hyprland',
+        [
+            hyprland,
+            waybar_hypr,
             wofi,
         ]
     ],
