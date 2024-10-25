@@ -166,7 +166,7 @@ fi
 # enable fzf autocomplete
 if [[ $(which fzf) ]]; then
     source /usr/share/doc/fzf/examples/key-bindings.bash
-    # source /usr/share/doc/fzf/examples/completion.bash # doesn't exist!
+    # source /usr/share/doc/fzf/examples/completion.bash # shouldn't be necessary for Debian
 fi
 
 ####################################################################################################
