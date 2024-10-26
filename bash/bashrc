@@ -163,6 +163,12 @@ else
     export EDITOR="vim"
 fi
 
+# enable fzf autocomplete
+if [[ $(which fzf) ]]; then
+    source /usr/share/doc/fzf/examples/key-bindings.bash
+    source /usr/share/doc/fzf/examples/completion.bash
+fi
+
 ####################################################################################################
 if [[ $(which neofetch) ]]; then
     neofetch --disable icons wm_theme theme term_font cpu gpu resolution model \
