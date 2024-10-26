@@ -21,15 +21,17 @@ set $menu_aux wofi --show run| xargs swaymsg exec --
 include /etc/sway/config-vars.d/*
 
 ### Output configuration
-set $bg_img ~/.config/sway/img/Cyberpunk-Background-HD-2357151896.jpg
-output * bg $bg_img fill
+exec_always ~/.config/sway/wallpaper.sh
+# set $bg_img ~/.config/sway/img/Cyberpunk-Background-HD-2357151896.jpg
+# output * bg $bg_img fill
 
 # Status Bar:
 exec_always killall waybar
 exec_always waybar
 
 # auto tiling script
-exec_always python3 ~/.config/sway/autotiling/main.py
+# exec_always python3 ~/.config/sway/autotiling/main.py
+exec_always ~/.config/sway/autotiling.sh
 
 # Example configuration:
 #
@@ -38,7 +40,7 @@ exec_always python3 ~/.config/sway/autotiling/main.py
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 # lock config
-set $lock ~/.config/sway/lock.sh blur
+set $lock "~/.config/sway/lock.sh blur"
 
 ### Idle configuration
 # Example configuration:
