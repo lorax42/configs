@@ -27,6 +27,13 @@ require("lazy").setup({
         priority = 1000
     },
 
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    },
+
     -- Vscode-like pictograms
     {
         "onsails/lspkind.nvim",
