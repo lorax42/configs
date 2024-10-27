@@ -8,7 +8,7 @@ elif [[ ! $(grim -h) ]]; then
     exit
 fi
 
-SCREENSHOT_PATH=~/Pictures/Screenshots/
+SCREENSHOT_PATH=~/Pictures/screenshots/
 if [[ ! -d $SCREENSHOT_PATH ]]; then
     mkdir -p $SCREENSHOT_PATH
 fi
