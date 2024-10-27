@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+# This script looks for a file named ~/Pictures/wallpaper/index.txt and reads
+# the name of an image from the first line.
+# If the picture exists in the directory it will be set as the wallpaper else
+# the default image is chosen.
+# This allows for background image customization per machine without having to
+# change the configs.
 
 local_wp_dir=~/Pictures/wallpaper
 
