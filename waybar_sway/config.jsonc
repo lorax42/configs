@@ -1,5 +1,5 @@
 {
-    "layer": "top",
+    "layer": "bottom",
     "position": "top",
     //"height": 30,
     //"width": 1280,
@@ -9,29 +9,29 @@
         "sway/workspaces",
         "sway/mode",
         "sway/scratchpad",
-        "custom/media"
+        "custom/media",
+        "sway/window"
     ],
 
     "modules-center": [
-        //"sway/window"
-        "clock",
+        "clock"
     ],
 
     "modules-right": [
-        //"mpd",
+        "mpd",
         "idle_inhibitor",
         "pulseaudio",
         "cpu",
         "memory",
         //"temperature",
-        //"backlight",
+        "backlight",
         "keyboard-state",
         //"sway/language",
         "network",
         "battery",
         //"battery#bat2",
         "tray",
-        "custom/exit",
+        "custom/exit"
     ],
 
     // Modules configuration
@@ -58,6 +58,10 @@
     },
 
     "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+
+    "sway/window": {
         "format": "<span style=\"italic\">{}</span>"
     },
     
