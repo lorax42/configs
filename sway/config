@@ -28,6 +28,7 @@ exec_always ~/.config/sway/wallpaper.sh
 # Status Bar:
 exec_always killall waybar
 exec_always waybar
+exec swaync
 
 # auto tiling script
 # exec_always python3 ~/.config/sway/autotiling/main.py
