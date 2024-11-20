@@ -157,10 +157,18 @@ if [[ $(which starship) ]]; then
     eval "$(starship init bash)"
 fi
 
+# set default editor
 if [[ $(which nvim) ]]; then
-    export EDITOR="nvim"
+    export EDITOR='nvim'
+    export VISUAL='nvim'
 else
-    export EDITOR="vim"
+    export EDITOR='vim'
+    export VISUAL='vim'
+fi
+
+# set nvim to manpager
+if [[ $(which nvim) ]]; then
+    export MANPAGER='nvim +Man!'
 fi
 
 # enable fzf autocomplete
