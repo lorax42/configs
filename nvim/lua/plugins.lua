@@ -451,12 +451,28 @@ require("lazy").setup({
             },
         },
     },
-    
+
     {
         "max397574/colortils.nvim",
         cmd = "Colortils",
         config = function()
             require("colortils").setup()
         end,
+    },
+
+    {
+        'petertriho/nvim-scrollbar',
+        dependencies = {
+            {
+                'kevinhwang91/nvim-hlslens',
+                config = function ()
+                    require("hlslens").setup()
+                end
+            },
+            'lewis6991/gitsigns.nvim'
+        },
+        config = function ()
+            require("scrollbar").setup()
+        end
     },
 })
