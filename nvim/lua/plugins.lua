@@ -256,7 +256,15 @@ require("lazy").setup({
 
         config = function()
             require('ripgrep')
-            require('telescope').setup()
+            require('telescope').setup({
+                defaults = {
+                },
+                pickers = {
+                    find_files = {
+                        hidden = true,
+                    }
+                }
+            })
         end
     },
 
