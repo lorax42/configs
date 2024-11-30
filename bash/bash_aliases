@@ -3,12 +3,14 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-alias l="ls"
-alias ll="ls -lh"
-alias la="ls -A"
+alias l="ls --group-directories-first"
+alias ll="ls -lh --group-directories-first"
+alias la="ls -A --group-directories-first"
 #alias la="ls -1sha --group-directories-first"
-alias lla="ls -lhA"
+alias lla="ls -lhA --group-directories-first"
+
 alias update="sudo apt update && sudo apt upgrade -y && flatpak update -y && sudo apt autoremove -y && sudo apt autoclean && rustup update"
+
 alias rm="rm -I"
 alias cp="cp -i"
 alias mv="mv -i"
