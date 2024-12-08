@@ -55,7 +55,7 @@ require('mason-lspconfig').setup({
         'bashls',                   -- Bash
         'marksman',                 -- Markdown
         'vimls',                    -- Vim/Vimscript
-        'hyprls',                   -- Hyprland Configs
+        -- 'hyprls',                   -- Hyprland Configs
         'html',                     -- HTML
         'cssls',                    -- CSS
         'jsonls',                   -- JSON
@@ -142,9 +142,9 @@ lspconfig.vimls.setup({
     on_attach = on_attach,
 })
 
-lspconfig.hyprls.setup({
+--[[ lspconfig.hyprls.setup({
     on_attach = on_attach,
-})
+}) ]]
 
 lspconfig.html.setup({
     on_attach = on_attach,
