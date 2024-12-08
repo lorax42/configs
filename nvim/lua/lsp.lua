@@ -47,17 +47,20 @@ require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
     ensure_installed = {
         -- LSP SERVERS
-        'pylsp',            -- Python
-        'lua_ls',           -- Lua
-        'rust_analyzer',    -- Rust
-        'clangd',           -- C/C++
-        'bashls',           -- Bash
-        'marksman',         -- Markdown
-        'vimls',            -- Vim/Vimscript
-        'html',             -- HTML
-        'jsonls',           -- JSON
-        'texlab',           -- LaTeX
-        'phpactor',         -- PHP
+        'pylsp',                    -- Python
+        'lua_ls',                   -- Lua
+        'rust_analyzer',            -- Rust
+        'clangd',                   -- C/C++
+        'arduino_language_server',  -- Arduino (.ino)
+        'bashls',                   -- Bash
+        'marksman',                 -- Markdown
+        'vimls',                    -- Vim/Vimscript
+        'hyprls',                   -- Hyprland Configs
+        'html',                     -- HTML
+        'cssls',                    -- CSS
+        'jsonls',                   -- JSON
+        'texlab',                   -- LaTeX
+        'phpactor',                 -- PHP
     },
 })
 
@@ -123,6 +126,10 @@ lspconfig.clangd.setup({
     on_attach = on_attach,
 })
 
+lspconfig.arduino_language_server.setup({
+    on_attach = on_attach,
+})
+
 lspconfig.bashls.setup({
     on_attach = on_attach,
 })
@@ -135,7 +142,15 @@ lspconfig.vimls.setup({
     on_attach = on_attach,
 })
 
+lspconfig.hyprls.setup({
+    on_attach = on_attach,
+})
+
 lspconfig.html.setup({
+    on_attach = on_attach,
+})
+
+lspconfig.cssls.setup({
     on_attach = on_attach,
 })
 
