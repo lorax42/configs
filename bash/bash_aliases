@@ -3,11 +3,18 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-alias l="ls --group-directories-first"
-alias ll="ls -lh --group-directories-first"
-alias la="ls -A --group-directories-first"
-#alias la="ls -1sha --group-directories-first"
-alias lla="ls -lhA --group-directories-first"
+if [[ $(which lsd) ]]; then
+    ls="lsd"
+else
+    ls="ls"
+fi
+
+alias ls="$ls"
+alias l="$ls --group-directories-first"
+alias ll="$ls -lh --group-directories-first"
+alias la="$ls -A --group-directories-first"
+#alias la="$ls -1sha --group-directories-first"
+alias lla="$ls -lhA --group-directories-first"
 
 alias update="sudo apt update && sudo apt upgrade -y && flatpak update -y && sudo apt autoremove -y && sudo apt autoclean && rustup update"
 
