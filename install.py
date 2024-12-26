@@ -14,6 +14,7 @@ def main():
         print("0: exit")
         print("1: dotfile")
         print("2: bundle")
+        print("3: diffs")
 
         index = int(input("> "))
 
@@ -51,6 +52,21 @@ def main():
             for func in bundles[index][1]:
                 func()
 
+        elif index == 3:
+            i = 0
+
+            for func in funcs:
+                print(f"{i}: {func[0]}")
+                i += 1
+
+            index = int(input("> "))
+
+            if index > len(funcs) or index < 0:
+                print(f"E: invalid index = {index}")
+                ex()
+
+            funcs[index][1](diff=True)
+
         else:
             print(f"E: invalid index = {index}")
 
@@ -63,11 +79,14 @@ def main():
                         func()
 
     else:
+        diff=False
+        if sys.argv[1] == "-d":
+            diff=True
         # search args for installable dotfiles
         for arg in sys.argv:
             for func in funcs:
                 if arg == func[0]:
-                    func[1]()
+                    func[1](diff=diff)
 
 
 if __name__ == "__main__":
