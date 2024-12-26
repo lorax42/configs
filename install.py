@@ -63,11 +63,14 @@ def main():
                         func()
 
     else:
+        diff=False
+        if sys.argv[1] == "-d":
+            diff=True
         # search args for installable dotfiles
         for arg in sys.argv:
             for func in funcs:
                 if arg == func[0]:
-                    func[1]()
+                    func[1](diff=diff)
 
 
 if __name__ == "__main__":
