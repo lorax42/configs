@@ -58,6 +58,8 @@ require('mason-lspconfig').setup({
         -- 'hyprls',                   -- Hyprland Configs
         'html',                     -- HTML
         'cssls',                    -- CSS
+        'css_variables',
+        'cssmodules_ls',
         'jsonls',                   -- JSON
         'texlab',                   -- LaTeX
         'phpactor',                 -- PHP
@@ -151,6 +153,14 @@ lspconfig.html.setup({
 })
 
 lspconfig.cssls.setup({
+    on_attach = on_attach,
+})
+
+lspconfig.css_variables.setup({
+    on_attach = on_attach,
+})
+
+lspconfig.cssmodules_ls.setup({
     on_attach = on_attach,
 })
 
