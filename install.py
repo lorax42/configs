@@ -71,31 +71,36 @@ def main():
             print(f"E: invalid index = {index}")
 
     elif sys.argv[1] == "-b":
-        for arg in sys.argv:
+        for arg in sys.argv[2:]:
+            exists = False
             # loop through bunles in list (skipping first (exit))
             for bundle in bundles[1:]:
                 if bundle[0] == arg:
+                    exists = True
                     for func in bundle[1]:
                         func()
+            if not exists:
+                print(f"E: bundle for {arg} doesn't exists")
 
     else:
         diff=False
+        # diff=True  # DEBUG
         if sys.argv[1] == "-d":
             diff=True
-        if len(sys.argv) < 3:
-            print("DIFFING ALL!")
-            for func in funcs[1:]:
-                func[1](diff=diff)
+            if len(sys.argv) < 3:
+                print("DIFFING ALL!")
+                for func in funcs[1:]:
+                    func[1](diff=diff)
         # search args for installable dotfiles
-        for arg in sys.argv[2:]:
+        for arg in sys.argv[1:]:
+            print(f"### {arg}:")  # DEBUG
+            exists = False
             for func in funcs[1:]:
                 if arg == func[0]:
+                    exists = True
                     func[1](diff=diff)
             if not exists:
-<<<<<<< HEAD
                 print(f"E: configs for {arg} don't exists")
-=======
->>>>>>> 8f7d98cb7f902811a08d67aabf070a733e6ab2dc
 
 
 if __name__ == "__main__":
