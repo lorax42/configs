@@ -82,9 +82,13 @@ def main():
         diff=False
         if sys.argv[1] == "-d":
             diff=True
+        if len(sys.argv) < 3:
+            print("DIFFING ALL!")
+            for func in funcs[1:]:
+                func[1](diff=diff)
         # search args for installable dotfiles
-        for arg in sys.argv:
-            for func in funcs:
+        for arg in sys.argv[2:]:
+            for func in funcs[1:]:
                 if arg == func[0]:
                     func[1](diff=diff)
 
