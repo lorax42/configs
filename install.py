@@ -70,6 +70,16 @@ def main():
         else:
             print(f"E: invalid index = {index}")
 
+    elif sys.argv[1] == "-l":
+        print("### CONFIGS:")
+        for func in funcs:
+            print(func[0])
+
+        print()
+        print("### BUNDLES:")
+        for bundle in bundles:
+            print(bundle[0])
+
     elif sys.argv[1] == "-b":
         for arg in sys.argv[2:]:
             exists = False
