@@ -23,3 +23,6 @@
 - lxpolkit
 - wl-mirror
 - wl-present
+
+### obs-plugins
+wlrobs

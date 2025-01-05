@@ -25,6 +25,10 @@ exec_always ~/.config/sway/wallpaper.sh
 # set $bg_img ~/.config/sway/img/Cyberpunk-Background-HD-2357151896.jpg
 # output * bg $bg_img fill
 
+# set environment variables
+exec_always export XDG_CURRENT_DESKTOP=sway
+exec_always export XDG_SESSION_TYPE=wayland
+
 # Status Bar:
 exec_always killall waybar
 exec_always waybar
