@@ -177,6 +177,10 @@ if [[ $(which fzf) ]]; then
     # source /usr/share/doc/fzf/examples/completion.bash # shouldn't be necessary for Debian
 fi
 
+if [[ $(which zoxide) ]]; then
+    source ~/.bash_zoxide.sh
+fi
+
 ####################################################################################################
 if [[ $(which neofetch) ]]; then
     neofetch --disable icons wm_theme theme term_font cpu gpu resolution model \
