@@ -128,5 +128,5 @@ vim.keymap.set('v', '>', '>gv', opts)
 -------------------
 -- Terminal mode --
 -------------------
-vim.keymap.set('t', '<ESC><ESC>', '<C-\\><C-n>')
+vim.keymap.set('t', '<ESC><ESC><ESC>', '<C-\\><C-n>')
 
