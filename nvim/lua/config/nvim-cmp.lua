@@ -76,6 +76,7 @@ cmp.setup({
 
         -- customize the appearance of the completion menu
         format = function(entry, vim_item)
+            -- require("nvim-highlight-colors").format
             vim_item.menu = ({
                 -- nvim_lsp = '[Lsp]',
                 nvim_lsp = '󰿘',
@@ -88,7 +89,6 @@ cmp.setup({
             })[entry.source.name]
             return vim_item
         end,
-        format = require("nvim-highlight-colors").format
     },
 
     -- Set source precedence
