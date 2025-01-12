@@ -178,7 +178,7 @@ if [[ $(which fzf) ]]; then
 fi
 
 if [[ $(which zoxide) ]]; then
-    source ~/.bash_zoxide.sh
+    eval "$(zoxide init bash)"
 fi
 
 ####################################################################################################
