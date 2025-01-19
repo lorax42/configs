@@ -173,12 +173,11 @@ fi
 
 # enable fzf autocomplete
 if [[ $(which fzf) ]]; then
-    source /usr/share/doc/fzf/examples/key-bindings.bash
-    # source /usr/share/doc/fzf/examples/completion.bash # shouldn't be necessary for Debian
+    source /usr/share/bash-completion/completions/fzf
 fi
 
 if [[ $(which zoxide) ]]; then
-    eval "$(zoxide init bash)"
+    source ~/.bash_zoxide.sh
 fi
 
 ####################################################################################################

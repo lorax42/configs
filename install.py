@@ -92,25 +92,15 @@ def main():
             if not exists:
                 print(f"E: bundle for {arg} doesn't exists")
 
-    elif sys.argv[1] == "-d":
-        diff=True
-        if len(sys.argv) < 3:
-            print("DIFFING ALL!")
-            for func in funcs[1:]:
-                func[1](diff=diff)
-
-        # search args for diffable dotfiles
-        for arg in sys.argv[2:]:
-            print(f"### {arg}:")  # DEBUG
-            exists = False
-            for func in funcs[1:]:
-                if arg == func[0]:
-                    exists = True
-                    func[1](diff=diff)
-            if not exists:
-                print(f"E: configs for {arg} don't exists")
-
     else:
+        diff=False
+        # diff=True  # DEBUG
+        if sys.argv[1] == "-d":
+            diff=True
+            if len(sys.argv) < 3:
+                print("DIFFING ALL!")
+                for func in funcs[1:]:
+                    func[1](diff=diff)
         # search args for installable dotfiles
         for arg in sys.argv[1:]:
             print(f"### {arg}:")  # DEBUG
@@ -118,7 +108,7 @@ def main():
             for func in funcs[1:]:
                 if arg == func[0]:
                     exists = True
-                    func[1]()
+                    func[1](diff=diff)
             if not exists:
                 print(f"E: configs for {arg} don't exists")
 
