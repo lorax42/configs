@@ -4,6 +4,7 @@ import pathlib as pl
 import shutil as st
 import filecmp as cmp
 import difflib
+import subprocess
 
 
 homedir = pl.Path.home()
@@ -155,6 +156,19 @@ def waybar(diff=False):
 
 # function for waybar
 def waybar_sway(diff=False):
+    result = subprocess.run(
+        [
+            'curl',
+            '-o',
+            './waybar_sway/mediaplayer.py',
+            'https://github.com/Alexays/Waybar/raw/refs/heads/master/resources/custom_modules/mediaplayer.py'
+         ],
+        check=False
+    )
+
+    if result.returncode != 0:
+        print(f"Failed to download mediaplayer.py: {result.stderr}")
+
     install("./waybar_sway/", f"{homedir}/.config/waybar/", diff=diff)
 
 

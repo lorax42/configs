@@ -9,7 +9,7 @@
         "sway/workspaces",
         "sway/mode",
         "sway/scratchpad",
-        "custom/media",
+        // "custom/media",
         "sway/window"
     ],
 
@@ -19,6 +19,7 @@
 
     "modules-right": [
         "mpd",
+        "custom/spotify",
         "idle_inhibitor",
         "pulseaudio",
         "cpu",
@@ -223,6 +224,15 @@
         "format": "",
         "tooltip": false,
         "on-click": "sway exit"
+    },
+
+    "costom/spotify": {
+        "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
+        "format": "{}  ",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
     }
 }
 
