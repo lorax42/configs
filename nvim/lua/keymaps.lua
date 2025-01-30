@@ -89,7 +89,7 @@ vim.keymap.set('n', '<leader>t', ':tabe<CR>')
 --vim.keymap.set('n', '<C-S-Tab>', 'gT')
 
 -- Floaterm
-vim.keymap.set('n', '<leader>x', ':FloatermToggle<CR>')
+vim.keymap.set('n', '<leader>x', ':FloatermToggle<CR>', opts)
 
 -- cokeline
 local map = vim.api.nvim_set_keymap
