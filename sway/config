@@ -118,6 +118,17 @@ input "wayland-pointer-seat" {
     # Lock sway
     bindsym $mod+Escape exec $lock
 
+    # Change Volume
+    set $default_sync "alsa_output.pci-0000_00_1f.3.analog-stereo"
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $default_sync +5%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume $default_sync -5%
+    bindsym XF86AudioMute exec pactl set-sink-mute $default_sync toggle
+
+    # Change Brightness
+    # user must be in video group
+    bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+    bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+
 # Moving around:
 
     # Move your focus around
