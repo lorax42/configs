@@ -23,6 +23,7 @@
 - lxpolkit
 - wl-mirror
 - wl-present
+- brighnessctl
 
 ### obs-plugins
 wlrobs

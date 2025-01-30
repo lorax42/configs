@@ -4,9 +4,22 @@ These are my dotfiles.
 
 <!--toc:start-->
 - [configs](#configs)
+  - [Requirements] (#requirements)
   - [Install](#install)
   - [Future](#future)
 <!--toc:end-->
+
+## Requirements
+* python3
+  * sys
+  * os
+  * pathlib
+  * shutil 
+  * filecmp
+  * difflib
+  * pycurl
+  * io
+
 
 ## Install
 See `dotfiles.py` for available dotfiles and bundles.
@@ -21,6 +34,6 @@ cd configs
 ```
 
 ## Future
-- [ ] show configs that differ
-- [ ] show diffs
+- [x] show configs that differ
+- [x] show diffs
 
