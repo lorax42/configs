@@ -9,17 +9,17 @@
         "sway/workspaces",
         "sway/mode",
         "sway/scratchpad",
-        // "custom/media",
         "sway/window"
     ],
 
     "modules-center": [
+        "custom/spotify",
         "clock"
     ],
 
     "modules-right": [
-        "mpd",
-        "custom/spotify",
+        // "mpd",
+        // "custom/media",
         "idle_inhibitor",
         "pulseaudio",
         "cpu",
@@ -147,7 +147,9 @@
 
     "backlight": {
         // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
+        // "format": "{percent}% {icon}",
+        "format": "{icon}",
+        "tooltip-format": "{percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
 
@@ -174,11 +176,13 @@
 
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{signalStrength}% 󰖩",
+        // "format-wifi": "{signalStrength}% 󰖩",
+        "format-wifi": "󰖩",
         //"format-wifi": "WIFI: {essid} ({signalStrength}%)",
         "format-ethernet": "{ipaddr}/{cidr} ",
         //"format-ethernet": "ETH: {ipaddr}/{cidr}",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        // "tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip-format": "{essid} ({signalStrength}%) @ {ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "󰖪",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
@@ -186,12 +190,15 @@
 
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon}  {format_source}",
+        // "format": "{volume}% {icon} {format_source}",
+        "format": "{icon} {format_source}",
+        // "format-bluetooth": "{volume}% {icon}  {format_source}",
+        "format-bluetooth": "{icon}  {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         //"format-muted": " {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
+        // "format-source": "{volume}% ",
+        "format-source": "",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
@@ -216,7 +223,7 @@
         },
 
         "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        "exec": "python3 $HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
 
@@ -226,7 +233,7 @@
         "on-click": "sway exit"
     },
 
-    "costom/spotify": {
+    "custom/spotify": {
         "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
         "format": "{}  ",
         "return-type": "json",
@@ -235,4 +242,3 @@
         "on-scroll-down": "playerctl previous"
     }
 }
-
