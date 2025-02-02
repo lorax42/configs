@@ -9,8 +9,8 @@ elif [[ ! $(which kitty) ]]; then
     exit 1
 fi
 
-entries="󰨚 Toggle\n󰖩 On\n󰖪 Off\n Settings"
-selected=$(echo -e $entries|wofi --width 250 --height 210 --dmenu --cache-file /dev/null | awk '{print tolower($2)}')
+entries="󰨚 Toggle\n󰖩 On\n󰖪 Off\n󱚾 Settings"
+selected=$(echo -e $entries|wofi --width 250 --height 300 --dmenu --cache-file /dev/null | awk '{print tolower($2)}')
 
 STAT=$(nmcli radio wifi)
 

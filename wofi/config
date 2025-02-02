@@ -4,3 +4,4 @@ insensitive=true
 no_actions=true
 height=50%
 width=20%
+hide_scroll=true
