@@ -152,7 +152,6 @@ def superfile(diff=False):
 # function for waybar
 def waybar(diff=False):
     install("./waybar/", f"{homedir}/.config/waybar/", diff=diff)
-    install("./scripts/wofi-power.sh", f"{homedir}/.local/bin/wofi-power.sh", diff=diff)
 
 
 # function for waybar
@@ -171,13 +170,11 @@ def waybar_sway(diff=False):
         print(f"Failed to download mediaplayer.py: {result.stderr}")
 
     install("./waybar_sway/", f"{homedir}/.config/waybar/", diff=diff)
-    install("./scripts/wofi-power.sh", f"{homedir}/.local/bin/wofi-power.sh", diff=diff)
 
 
 # function for waybar
 def waybar_hypr(diff=False):
     install("./waybar_hypr/", f"{homedir}/.config/waybar/", diff=diff)
-    install("./scripts/wofi-power.sh", f"{homedir}/.local/bin/wofi-power.sh", diff=diff)
 
 
 # function for wofi
@@ -195,4 +192,4 @@ def bash(diff=False):
 # function for scripts
 def scripts(diff=False):
     install("./scripts/wifi.sh", f"{homedir}/.local/bin/wifi.sh", diff=diff)
-    install("./scripts/wofi-power.sh", f"{homedir}/.local/bin/wofi-power.sh", diff=diff)
+    install("./scripts/", f"{homedir}/.config/scripts/", diff=diff)

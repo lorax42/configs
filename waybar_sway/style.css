@@ -232,3 +232,8 @@ label:focus {
     /* background-color: rgba(255, 0, 0, 1.0) */
     font-size: 1.7rem;
 }
+
+#custom-actions {
+    font-size: 1.7rem;
+    padding-right: 5px;
+}

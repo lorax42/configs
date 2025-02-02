@@ -100,6 +100,9 @@ input "wayland-pointer-seat" {
     bindsym $mod+Space exec $menu
     bindsym $mod+Shift+Space exec $menu_aux
 
+    # start actions menu
+    bindsym $mod+Shift+a exec ~/.config/scripts/wofi-actions.sh
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.

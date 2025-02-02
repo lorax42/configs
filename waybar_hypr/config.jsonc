@@ -31,7 +31,8 @@
         "battery",
         //"battery#bat2",
         "tray",
-        "custom/exit",
+        // "custom/exit",
+        "custom/actions"
     ],
 
     // Modules configuration
@@ -219,6 +220,12 @@
         "format": "",
         "tooltip": false,
         "on-click": "wofi-power.sh"
+    },
+
+    "custom/actions": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "~/.config/scripts/wofi-actions.sh"
     }
 }
 

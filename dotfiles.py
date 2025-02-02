@@ -46,6 +46,7 @@ bundles = [
             sway,
             waybar_sway,
             wofi,
+            scripts,
         ]
     ],
     [
@@ -54,6 +55,7 @@ bundles = [
             hyprland,
             waybar_hypr,
             wofi,
+            scripts,
         ]
     ],
     [
