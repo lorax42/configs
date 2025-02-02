@@ -218,7 +218,7 @@
     "custom/exit": {
         "format": "",
         "tooltip": false,
-        "on-click": "hyprctl notify 0 3000 0 'use Super+M to exit'"
+        "on-click": "wofi-power.sh"
     }
 }
 

@@ -230,7 +230,7 @@
     "custom/exit": {
         "format": "",
         "tooltip": false,
-        "on-click": "sway exit"
+        "on-click": "wofi-power.sh"
     },
 
     "custom/spotify": {
