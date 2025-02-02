@@ -44,6 +44,10 @@ if [[ $(which git) ]]; then
     alias gP="echo 'using alias gP' && git push"
 fi
 
+if [[ $(which yazi) ]]; then
+    alias y="yazi"
+fi
+ 
 # WINDOWS C/C++
 alias wingcc="x86_64-w64-mingw32-gcc"
 alias wing++="x86_64-w64-mingw32-g++"
