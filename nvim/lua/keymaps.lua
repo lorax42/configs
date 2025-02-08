@@ -25,7 +25,9 @@ vim.keymap.set('n', '<A-k>', 'ddkP==', opts)
 vim.keymap.set('n', '<A-UP>', 'ddkP==', opts)
 
 vim.keymap.set('v', '<A-Up>', ":m '<-2<CR>gv=gv", opts)
+vim.keymap.set('v', '<A-j>', ":m '<-2<CR>gv=gv", opts)
 vim.keymap.set('v', '<A-Down>', ":m '>+1<CR>gv=gv", opts)
+vim.keymap.set('v', '<A-k>', ":m '>+1<CR>gv=gv", opts)
 
 vim.keymap.set('i', '<A-j>', '<ESC>ddp==gi', opts)
 vim.keymap.set('i', '<A-DOWN>', '<ESC>ddp==gi', opts)

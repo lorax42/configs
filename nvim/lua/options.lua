@@ -31,5 +31,24 @@ vim.opt.smartcase = true            -- but make it case sensitive if an uppercas
 
 vim.api.nvim_command('filetype plugin indent on')
 
+-- HIGHLIGHT ON YANK
+
+-- augroup highlight_yank
+--     autocmd!
+--     au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=700})
+-- augroup END
+-- Create an autocommand group for highlighting yanked text
+
+vim.api.nvim_create_augroup("highlight_yank", { clear = true })
+
+-- Define the autocommand for the TextYankPost event
+vim.api.nvim_create_autocmd("TextYankPost", {
+    group = "highlight_yank",
+    pattern = "*",
+    callback = function()
+        vim.highlight.on_yank({ higroup = "IncSearch", timeout = 100 })
+    end,
+})
+
 -- undo
 --vim.opt.undofile = true
