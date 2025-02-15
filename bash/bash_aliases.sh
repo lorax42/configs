@@ -5,9 +5,10 @@ else
     cd="cd"
 fi
 
-alias ..="$cd .."
-alias ...="$cd ../.."
-alias ....="$cd ../../.."
+alias cd="$cd"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 
 if [[ $(which lsd) ]]; then
     ls="lsd"
