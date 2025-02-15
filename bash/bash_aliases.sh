@@ -1,11 +1,4 @@
 ### ALIASES
-if [[ $(which zoxide) ]]; then
-    cd="z"
-else
-    cd="cd"
-fi
-
-alias cd="$cd"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
