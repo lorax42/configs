@@ -479,7 +479,7 @@ require("lazy").setup({
         end,
     },
 
-    {
+    --[[ {
         'petertriho/nvim-scrollbar',
         dependencies = {
             {
@@ -497,7 +497,7 @@ require("lazy").setup({
                 }
             })
         end
-    },
+    }, ]]
 
     {
         "xiyaowong/transparent.nvim"

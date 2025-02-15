@@ -185,7 +185,7 @@ def wofi(diff=False):
 # function for bash
 def bash(diff=False):
     install("./bash/bashrc", f"{homedir}/.bashrc", diff=diff)
-    install("./bash/bash_aliases", f"{homedir}/.bash_aliases", diff=diff)
+    install("./bash/bash_aliases.sh", f"{homedir}/.bash_aliases.sh", diff=diff)
     install("./bash/bash_zoxide.sh", f"{homedir}/.bash_zoxide.sh", diff=diff)
 
 
