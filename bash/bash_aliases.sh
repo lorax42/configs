@@ -1,7 +1,13 @@
 ### ALIASES
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
+if [[ $(which zoxide) ]]; then
+    cd="z"
+else
+    cd="cd"
+fi
+
+alias ..="$cd .."
+alias ...="$cd ../.."
+alias ....="$cd ../../.."
 
 if [[ $(which lsd) ]]; then
     ls="lsd"
