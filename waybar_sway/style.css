@@ -1,13 +1,16 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FiraCode Nerdfont Mono, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: FiraCode Nerdfont Mono, monospace;
     font-size: 20px;
+    /* font-weight: bold; */
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: #ffffff;
+    /* background-color: rgba(43, 48, 59, 0.5); */
+    background-color: rgba(30, 30, 46, 0.8);
+    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+    border-radius: 15px;
+    color: #cdd6f4;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -25,18 +28,18 @@ window#waybar.solo {
 }
 */
 
-window#waybar.termite {
+/* window#waybar.termite {
     background-color: #3F3F3F;
-}
+} */
 
-window#waybar.chromium {
+/* window#waybar.chromium {
     background-color: #000000;
     border: none;
-}
+} */
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
+    /* box-shadow: inset 0 -3px transparent; */
     /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 0;
@@ -45,7 +48,8 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
+    /* box-shadow: inset 0 -3px #ffffff; */
+    color: #89b4fa;
 }
 
 #workspaces button {
@@ -56,6 +60,7 @@ button:hover {
 
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
+    color: #89b4fa;
 }
 
 /*#workspaces button.focused {
@@ -69,7 +74,7 @@ button:hover {
 
 #mode {
     background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
+    /* border-bottom: 3px solid #ffffff; */
 }
 
 #clock,
@@ -90,7 +95,7 @@ button:hover {
 #mpd,
 #custom-exit {
     padding: 0 10px;
-    color: #ffffff;
+    color: #cdd6f4;
     /* background-color: rgba(255, 255, 255, 0.2); */
     border-radius: 10px;
 }
@@ -98,6 +103,11 @@ button:hover {
 #window,
 #workspaces {
     margin: 0 4px;
+}
+
+#window {
+    font-size: 1.2rem;
+    padding-top: 5px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -121,6 +131,15 @@ button:hover {
         background-color: #ffffff;
         color: #000000;
     }
+}
+
+#battery.warning:not(.charging) {
+    color: #fab387;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 #battery.critical:not(.charging) {
@@ -221,6 +240,7 @@ label:focus {
 
 #scratchpad {
     /* background: rgba(0, 0, 0, 0.2); */
+    color: #a6adc8;
 }
 
 #scratchpad.empty {
@@ -234,6 +254,12 @@ label:focus {
 }
 
 #custom-actions {
-    font-size: 1.7rem;
-    padding-right: 5px;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+#custom-music {
+    font-weight: normal;
+    font-size: 1.2rem;
+    padding-top: 5px;
 }

@@ -1,8 +1,12 @@
 {
     "layer": "bottom",
     "position": "top",
-    //"height": 30,
-    //"width": 1280,
+    "margin-top": 5,
+    "margin-left": 5,
+    "margin-right": 5,
+    "margin-bottom": 0,
+    "height": 30,
+    // "width": 1280,
     "spacing": 5,
 
     "modules-left": [
@@ -13,19 +17,19 @@
     ],
 
     "modules-center": [
-        "custom/spotify",
         "clock"
     ],
 
     "modules-right": [
         // "mpd",
         // "custom/media",
+        "custom/music",
         "idle_inhibitor",
+        "backlight",
         "pulseaudio",
         "cpu",
         "memory",
         //"temperature",
-        "backlight",
         // "keyboard-state",
         //"sway/language",
         "network",
@@ -64,7 +68,12 @@
     },
 
     "sway/window": {
-        "format": "<span style=\"italic\">{}</span>"
+        "format": "<span style=\"italic\">{}</span>",
+        "max-length": 30,
+        "rewrite": {
+            ".* - (.*)$": "$1",
+            "(.*): .*$": "$1"
+        }
     },
     
     "sway/scratchpad": {
@@ -156,14 +165,13 @@
 
     "battery": {
         "states": {
-            // "good": 95,
+            "good": 95,
             "warning": 30,
             "critical": 15
         },
 
         "format": "{capacity}% {icon}",
-        //"format": "BAT: {capacity}%",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% 󱐋",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
@@ -180,7 +188,7 @@
         // "format-wifi": "{signalStrength}% 󰖩",
         "format-wifi": "󰖩",
         //"format-wifi": "WIFI: {essid} ({signalStrength}%)",
-        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰈁",
         //"format-ethernet": "ETH: {ipaddr}/{cidr}",
         // "tooltip-format": "{ifname} via {gwaddr} ",
         "tooltip-format": "{essid} ({signalStrength}%) @ {ifname} via {gwaddr} ",
@@ -226,6 +234,15 @@
         "escape": true,
         "exec": "python3 $HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+
+    "custom/music": {
+        "format": "🎜 {}",
+        "escape": true,
+        "max-length": 40,
+        "tooltip": "{}",
+        "exec": "playerctl metadata --format='{{ title }} - {{ artist }}'",
+        "on-click": "playerctl play-pause"
     },
 
     "custom/exit": {
