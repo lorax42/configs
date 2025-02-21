@@ -181,6 +181,10 @@ if [[ $(which zoxide) ]]; then
     alias cd=z
 fi
 
+if [[ $(which arduino-cli) ]]; then
+    eval "$(arduino-cli completion bash)"
+fi
+
 ####################################################################################################
 if [[ $(which neofetch) ]]; then
     neofetch --disable icons wm_theme theme term_font cpu gpu resolution model \
