@@ -545,7 +545,8 @@ require("lazy").setup({
         opts = {},
         config = function ()
             require('render-markdown').setup({
-                file_types = {'markdown', 'html', 'latex'}
+                file_types = {'markdown', 'html', 'latex'},
+                render_modes = { 'n', 'c', 't', 'i', 'v', 'V', 'CTRL-V' },
             })
         end
     }
