@@ -7,6 +7,12 @@
 					"kerboscript"
 				],
 				"path": "./snippets/kos.json"
+			},
+			{
+				"language": [
+					"gitcommit"
+				],
+				"path": "./snippets/gitcommit.json"
 			}
 		]
 	}
