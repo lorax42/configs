@@ -1,3 +1,4 @@
+
 # <type>[(optional scope)][!]: <description>
 # fix -> PATCH,
 # feat -> MINOR RELEASE,

@@ -87,6 +87,7 @@ def install(src, dest, diff=False):
 
         # install file
         print(f"installing {src} => {dest}...")
+        input("Are you sure you want to overwrite file?")
         dest.unlink()
         # st.copyfile(src, dest)
         st.copy2(src, dest)
@@ -104,6 +105,7 @@ def install(src, dest, diff=False):
 
         # install dir
         print(f"installing {src} => {dest}...")
+        input("Are you sure you want to overwrite dir?")
         st.rmtree(dest)
         st.copytree(src, dest)
 
