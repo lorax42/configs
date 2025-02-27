@@ -547,6 +547,7 @@ require("lazy").setup({
             require('render-markdown').setup({
                 file_types = {'markdown', 'html', 'latex'},
                 render_modes = { 'n', 'c', 't', 'i', 'v', 'V', 'CTRL-V' },
+                sign = {enabled = false},
             })
         end
     }
