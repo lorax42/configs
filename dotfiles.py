@@ -4,6 +4,7 @@ from funcs import *
 # list of functions and their identifier names
 funcs = [
     ['exit', ex],
+    ['git', git],
     ['vim', vim],
     ['nvim', nvim],
     ['starship', starship],

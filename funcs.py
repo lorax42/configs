@@ -193,3 +193,7 @@ def bash(diff=False):
 def scripts(diff=False):
     install("./scripts/wifi.sh", f"{homedir}/.local/bin/wifi.sh", diff=diff)
     install("./scripts/", f"{homedir}/.config/scripts/", diff=diff)
+
+def git(diff=False):
+    install("./git/commit-template.txt", f"{homedir}/.commit-template.txt", diff=diff)
+    install("./git/gitconfig", f"{homedir}/.gitconfig", diff=diff)

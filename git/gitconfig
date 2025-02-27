@@ -1,0 +1,10 @@
+[user]
+	email = 142108266+lorax42@users.noreply.github.com
+	signingkey = .ssh/githubkey
+	name = lorax
+[init]
+	defaultBranch = main
+[gpg]
+	format = ssh
+[commit]
+	template = /home/lorax/.commit-template.txt
