@@ -118,7 +118,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-PATH=$PATH:/home/$USER/.local/bin
+PATH=$PATH:/home/$USER/.local/bin:/usr/games
 
 # ARDUINO
 #alias arduino="arduino --port /dev/ttyUSB* --upload "
