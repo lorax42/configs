@@ -9,7 +9,6 @@
 # BREAKING CHANGE: … -> MAJOR RELEASE
 
 # [optional footer(s)]
-# BREAKING CHANGE: <description>
 # Fixes #123
 # Closes #123
 # Resolves #123
