@@ -1,0 +1,36 @@
+{
+    "conventional commit" : {
+        "prefix" : "con",
+        "body" : [
+            "<type>[(optional scope)][!]: <description>",
+            "# feat:            A new feature       - SemVer PATCH",
+            "# BREAKING CHANGE: Breaking API change - SemVer MAJOR",
+            "# fix:             A bug fix           - SemVer MINOR",
+            "# docs:            Change to documentation only",
+            "# style:           Change to style (whitespace, etc.)",
+            "# refactor         Change not related to a bug or feat",
+            "# perf             Change that affects performance",
+            "# test             Change that adds/modifies tests",
+            "# build            Change to build system",
+            "# ci               Change to CI pipeline/workflow",
+            "# chore            General tooling/config/min refactor",
+            "",
+            "[optional body]",
+            "# Motivation behind changes, more detail into how",
+            "# functionality might be affected, etc.",
+            "",
+            "[optional footer(s)]",
+            "# BREAKING CHANGE: <description>",
+            "# Fixes #123",
+            "# Closes #123",
+            "# Resolves #123",
+            "# Related to #123",
+            "# References #123",
+            "# Co-authored-by: Jeremy",
+            "# Reviewed-by: Jeremy",
+            "# Signed-off-by: Jeremy",
+            "# See also: Jeremy"
+        ],
+        "description" : "conventional commit message template"
+    }
+}
