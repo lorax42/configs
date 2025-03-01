@@ -35,7 +35,7 @@ def compare_files(file1, file2):
     with open(file1, 'r', encoding="utf-8") as f1, open(file2, 'r', encoding="utf-8") as f2:
         file1_lines = f1.readlines()
         file2_lines = f2.readlines()
-        diff = difflib.unified_diff(file1_lines, file2_lines, fromfile=file1, tofile=file2)
+        diff = difflib.unified_diff(file2_lines, file1_lines, fromfile=file2, tofile=file1)
         print('\n'.join(diff))
 
 
