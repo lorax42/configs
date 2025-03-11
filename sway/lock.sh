@@ -39,4 +39,5 @@ swaylock \
 	--effect-vignette 0.5:0.5 \
 	--grace 2 \
 	--fade-in 0.2 \
+    --datestr "%d.%m.%Y" \
     --config ~/.config/sway/swaylock.conf
