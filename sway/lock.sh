@@ -40,4 +40,4 @@ swaylock \
 	--grace 2 \
 	--fade-in 0.2 \
     --datestr "%d.%m.%Y" \
-    --config ~/.config/sway/swaylock.conf
+    --config ~/.config/sway/swaylock.conf &
