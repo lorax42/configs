@@ -60,6 +60,7 @@ require('mason-lspconfig').setup({
         'cssls',                    -- CSS
         'css_variables',
         'cssmodules_ls',
+        -- 'tailwindcss',              -- TailwindCSS
         'jsonls',                   -- JSON
         'texlab',                   -- LaTeX
         'phpactor',                 -- PHP
@@ -163,6 +164,11 @@ lspconfig.css_variables.setup({
 lspconfig.cssmodules_ls.setup({
     on_attach = on_attach,
 })
+
+-- lspconfig.tailwindcss.setup({
+--     on_attach = on_attach,
+--     filetypes = {"rust", "css", "html", "jsx", "tsx", "json", "lua", "yaml", "swig"},
+-- })
 
 lspconfig.jsonls.setup({
     on_attach = on_attach,
