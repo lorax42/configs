@@ -7,6 +7,6 @@
 [gpg]
 	format = ssh
 [commit]
-	template = /home/lorax/.commit-template.txt
+	template = ~/.commit-template.txt
 [core]
     editor = nvim
