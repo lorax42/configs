@@ -40,21 +40,18 @@ vim.keymap.set('i', '<A-UP>', '<ESC>ddkP==gi', opts)
 vim.keymap.set('n', '<leader>h', ':noh<CR>', opts)
 
 -- git/gitsigns
-local gitsigns = require('gitsigns')
-vim.keymap.set('n', '<leader>gb', gitsigns.blame_line, {})
-vim.keymap.set('n', '<leader>gs', gitsigns.stage_hunk, {})
-vim.keymap.set('n', '<leader>gS', gitsigns.stage_buffer, {})
-vim.keymap.set('n', '<leader>gu', gitsigns.undo_stage_hunk, {})
-vim.keymap.set('n', '<leader>gd', gitsigns.preview_hunk, {})
-vim.keymap.set('n', '<leader>gr', gitsigns.reset_hunk, {})
-vim.keymap.set('n', '<leader>ga', ':Git add ', {})
-vim.keymap.set('n', '<leader>gA', ':Git add .', {})
-vim.keymap.set('n', '<leader>gc', ':Git commit<CR>', {})
-vim.keymap.set('n', '<leader>gp', ':Git pull<CR>', {})
-vim.keymap.set('n', '<leader>gP', ':Git push<CR>', {})
-
--- NvimTree
-vim.keymap.set('n', '<C-f>', ':NvimTreeFocus<CR>', opts)
+-- local gitsigns = require('gitsigns')
+-- vim.keymap.set('n', '<leader>gb', gitsigns.blame_line, {})
+-- vim.keymap.set('n', '<leader>gs', gitsigns.stage_hunk, {})
+-- vim.keymap.set('n', '<leader>gS', gitsigns.stage_buffer, {})
+-- vim.keymap.set('n', '<leader>gu', gitsigns.undo_stage_hunk, {})
+-- vim.keymap.set('n', '<leader>gd', gitsigns.preview_hunk, {})
+-- vim.keymap.set('n', '<leader>gr', gitsigns.reset_hunk, {})
+-- vim.keymap.set('n', '<leader>ga', ':Git add ', {})
+-- vim.keymap.set('n', '<leader>gA', ':Git add .', {})
+-- vim.keymap.set('n', '<leader>gc', ':Git commit<CR>', {})
+-- vim.keymap.set('n', '<leader>gp', ':Git pull<CR>', {})
+-- vim.keymap.set('n', '<leader>gP', ':Git push<CR>', {})
 
 -- transparent background
 --local function trans()
@@ -79,30 +76,30 @@ vim.keymap.set('n', '<leader>t', ':tabe<CR>')
 --vim.keymap.set('n', '<C-S-Tab>', 'gT')
 
 -- Floaterm
-vim.keymap.set('n', '<leader>x', ':FloatermToggle<CR>', opts)
+-- vim.keymap.set('n', '<leader>x', ':FloatermToggle<CR>', opts)
 
 -- cokeline
 local map = vim.api.nvim_set_keymap
 
-map("n", "<S-Tab>", "<Plug>(cokeline-focus-prev)", { silent = true })
-map("n", "<Tab>", "<Plug>(cokeline-focus-next)", { silent = true })
-map("n", "<Leader>p", "<Plug>(cokeline-switch-prev)", { silent = true })
-map("n", "<Leader>n", "<Plug>(cokeline-switch-next)", { silent = true })
+-- map("n", "<S-Tab>", "<Plug>(cokeline-focus-prev)", { silent = true })
+-- map("n", "<Tab>", "<Plug>(cokeline-focus-next)", { silent = true })
+-- map("n", "<Leader>p", "<Plug>(cokeline-switch-prev)", { silent = true })
+-- map("n", "<Leader>n", "<Plug>(cokeline-switch-next)", { silent = true })
 
-for i = 1, 9 do
-    map(
-        "n",
-        ("<F%s>"):format(i),
-        ("<Plug>(cokeline-focus-%s)"):format(i),
-        { silent = true }
-    )
-    map(
-        "n",
-        ("<Leader>%s"):format(i),
-        ("<Plug>(cokeline-switch-%s)"):format(i),
-        { silent = true }
-    )
-end
+-- for i = 1, 9 do
+--     map(
+--         "n",
+--         ("<F%s>"):format(i),
+--         ("<Plug>(cokeline-focus-%s)"):format(i),
+--         { silent = true }
+--     )
+--     map(
+--         "n",
+--         ("<Leader>%s"):format(i),
+--         ("<Plug>(cokeline-switch-%s)"):format(i),
+--         { silent = true }
+--     )
+-- end
 
 -- lsp
 vim.keymap.set('n', '<leader>e', function() vim.diagnostic.open_float(nil, { focusable = false }) end)

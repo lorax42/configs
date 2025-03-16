@@ -79,54 +79,6 @@ return {
 		"neovim/nvim-lspconfig",
 		lazy = false,
 		config = function()
-			local capabilities = require("cmp-nvim-lsp").default_capabilities
-
-			local lspconfig = require("lspconfig")
-			lspconfig.pylsp.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.rust_analyzer.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.clangd.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.bashls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.marksman.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.vimls.setup({
-				capabilities = capabilities,
-			})
-			--[[ lspconfig.hyprls.setup({
-                on_attach = on_attach,
-            }) ]]
-			lspconfig.html.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.cssls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.css_variables.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.cssmodules_ls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.jsonls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.texlab.setup({
-				capabilities = capabilities,
-			})
-
 			-- Customized on_attach function
 			-- See `:help vim.diagnostic.*` for documentation on any of the below functions
 			local opts = { noremap = true, silent = true }
@@ -157,10 +109,70 @@ return {
 				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
 				vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
 				vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
-				vim.keymap.set("n", "gf", function()
-					vim.lsp.buf.format({ async = true })
-				end, bufopts)
+				-- vim.keymap.set("n", "<leader>gf", function()
+				-- 	vim.lsp.buf.format({ async = true })
+				-- end, bufopts)
 			end
+
+			local capabilities = require("cmp_nvim_lsp").default_capabilities
+
+			local lspconfig = require("lspconfig")
+			lspconfig.pylsp.setup({
+                on_attach = on_attach,
+				capabilities = capabilities,
+			})
+			lspconfig.lua_ls.setup({
+                on_attach = on_attach,
+				capabilities = capabilities,
+			})
+			lspconfig.rust_analyzer.setup({
+                on_attach = on_attach,
+				capabilities = capabilities,
+			})
+			lspconfig.clangd.setup({
+                on_attach = on_attach,
+				capabilities = capabilities,
+			})
+			lspconfig.bashls.setup({
+                on_attach = on_attach,
+				capabilities = capabilities,
+			})
+			lspconfig.marksman.setup({
+                on_attach = on_attach,
+				capabilities = capabilities,
+			})
+			lspconfig.vimls.setup({
+                on_attach = on_attach,
+				capabilities = capabilities,
+			})
+			--[[ lspconfig.hyprls.setup({
+                on_attach = on_attach,
+				capabilities = capabilities,
+            }) ]]
+			lspconfig.html.setup({
+                on_attach = on_attach,
+				capabilities = capabilities,
+			})
+			lspconfig.cssls.setup({
+                on_attach = on_attach,
+				capabilities = capabilities,
+			})
+			lspconfig.css_variables.setup({
+                on_attach = on_attach,
+				capabilities = capabilities,
+			})
+			lspconfig.cssmodules_ls.setup({
+                on_attach = on_attach,
+				capabilities = capabilities,
+			})
+			lspconfig.jsonls.setup({
+                on_attach = on_attach,
+				capabilities = capabilities,
+			})
+			lspconfig.texlab.setup({
+                on_attach = on_attach,
+				capabilities = capabilities,
+			})
 		end,
 	},
 }
