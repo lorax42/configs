@@ -1,0 +1,8 @@
+[user]
+	email = lorax4242@proton.me
+	signingkey = .ssh/githubkey
+	name = lorax
+[pull]
+    rebase = true
+[merge]
+    ff = true

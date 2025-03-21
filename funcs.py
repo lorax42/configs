@@ -199,3 +199,5 @@ def scripts(diff=False):
 def git(diff=False):
     install("./git/commit-template.txt", f"{homedir}/.commit-template.txt", diff=diff)
     install("./git/gitconfig", f"{homedir}/.gitconfig", diff=diff)
+    install("./git/gitconfig-github", f"{homedir}/.gitconfig-github", diff=diff)
+    install("./git/gitconfig-solarpunk", f"{homedir}/.gitconfig-solarpunk", diff=diff)

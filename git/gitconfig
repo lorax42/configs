@@ -10,3 +10,8 @@
 	template = ~/.commit-template.txt
 [core]
     editor = nvim
+
+[includeIf "hasconfig:remote.*.url:(ssh://)?git@github.com*/**"]
+    path = .gitconfig-github
+[includeIf "hasconfig:remote.*.url:(ssh://)?forgejo@git.solarpunk.social*/**"]
+    path = .gitconfig-solarpunk
