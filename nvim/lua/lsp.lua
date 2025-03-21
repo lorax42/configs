@@ -107,6 +107,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<space>f", function()
         vim.lsp.buf.format({ async = true })
     end, bufopts)
+    vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 end
 
 -- Configure each language
