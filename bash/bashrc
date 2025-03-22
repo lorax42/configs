@@ -191,6 +191,10 @@ if [[ -d ~/.nvm ]]; then
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
+if [[ -f ~/export-esp.sh ]]; then
+    . ~/export-esp.sh
+fi
+
 ####################################################################################################
 if [[ $(which neofetch) ]]; then
     neofetch --disable icons wm_theme theme term_font cpu gpu resolution model \
