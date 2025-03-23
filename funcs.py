@@ -129,6 +129,7 @@ def starship(diff=False):
 # function for nvim
 def nvim(diff=False):
     install("./nvim/", f"{homedir}/.config/nvim/", diff=diff)
+    install("./clang/clang-format", f"{homedir}/.clang-format", diff=diff)
 
 
 # function for kitty
