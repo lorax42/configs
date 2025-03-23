@@ -35,7 +35,8 @@ def compare_files(file1, file2):
     with open(file1, 'r', encoding="utf-8") as f1, open(file2, 'r', encoding="utf-8") as f2:
         file1_lines = f1.readlines()
         file2_lines = f2.readlines()
-        diff = difflib.unified_diff(file2_lines, file1_lines, fromfile=file2, tofile=file1)
+        diff = difflib.unified_diff(
+            file2_lines, file1_lines, fromfile=file2, tofile=file1)
         print('\n'.join(diff))
 
 
@@ -123,7 +124,8 @@ def vim(diff=False):
 
 # function for starship
 def starship(diff=False):
-    install("./starship/starship.toml", f"{homedir}/.config/starship.toml", diff=diff)
+    install("./starship/starship.toml",
+            f"{homedir}/.config/starship.toml", diff=diff)
 
 
 # function for nvim
@@ -165,7 +167,7 @@ def waybar_sway(diff=False):
             '-o',
             './waybar_sway/mediaplayer.py',
             'https://github.com/Alexays/Waybar/raw/refs/heads/master/resources/custom_modules/mediaplayer.py'
-         ],
+        ],
         check=False
     )
 
@@ -197,8 +199,12 @@ def scripts(diff=False):
     install("./scripts/wifi.sh", f"{homedir}/.local/bin/wifi.sh", diff=diff)
     install("./scripts/", f"{homedir}/.config/scripts/", diff=diff)
 
+
 def git(diff=False):
-    install("./git/commit-template.txt", f"{homedir}/.commit-template.txt", diff=diff)
+    install("./git/commit-template.txt",
+            f"{homedir}/.commit-template.txt", diff=diff)
     install("./git/gitconfig", f"{homedir}/.gitconfig", diff=diff)
-    install("./git/gitconfig-github", f"{homedir}/.gitconfig-github", diff=diff)
-    install("./git/gitconfig-solarpunk", f"{homedir}/.gitconfig-solarpunk", diff=diff)
+    install("./git/gitconfig-github",
+            f"{homedir}/.gitconfig-github", diff=diff)
+    install("./git/gitconfig-solarpunk",
+            f"{homedir}/.gitconfig-solarpunk", diff=diff)
