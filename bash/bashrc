@@ -195,9 +195,12 @@ if [[ -f ~/export-esp.sh ]]; then
     . ~/export-esp.sh
 fi
 
+if [[ -f ~/.local/share/blesh/ble.sh ]]; then
+    source ~/.local/share/blesh/ble.sh
+fi    
+
 ####################################################################################################
 if [[ $(which neofetch) ]]; then
     neofetch --disable icons wm_theme theme term_font cpu gpu resolution model \
         --ascii_distro Debian_small
 fi
-
