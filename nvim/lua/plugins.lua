@@ -561,6 +561,20 @@ require("lazy").setup({
             "nvim-telescope/telescope.nvim", -- optional
             "neovim/nvim-lspconfig", -- optional
         },
-        opts = {} -- your configuration
-    }
+        opts = {}                            -- your configuration
+    },
+
+    {
+        "nvim-telescope/telescope-ui-select.nvim",
+        config = function()
+            require("telescope").setup({
+                extensions = {
+                    ["ui-select"] = {
+                        require("telescope.themes").get_dropdown({}),
+                    },
+                },
+            })
+            require("telescope").load_extension("ui-select")
+        end,
+    },
 })
