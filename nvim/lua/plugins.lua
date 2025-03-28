@@ -543,11 +543,11 @@ require("lazy").setup({
         ---@module 'render-markdown'
         ---@type render.md.UserConfig
         opts = {},
-        config = function ()
+        config = function()
             require('render-markdown').setup({
-                file_types = {'markdown', 'html', 'latex'},
+                file_types = { 'markdown', 'html', 'latex' },
                 render_modes = { 'n', 'c', 't', 'i', 'v', 'V', 'CTRL-V' },
-                sign = {enabled = false},
+                sign = { enabled = false },
             })
         end
     },
@@ -559,7 +559,7 @@ require("lazy").setup({
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
             "nvim-telescope/telescope.nvim", -- optional
-            "neovim/nvim-lspconfig", -- optional
+            "neovim/nvim-lspconfig",         -- optional
         },
         opts = {}                            -- your configuration
     },
