@@ -217,11 +217,14 @@ def tmux(diff=False):
     if not diff:
         # get catppuccin theme
         src = "https://github.com/catppuccin/tmux.git"
+
         try:
             requests.get(src)
             print("I: Connection is available.")
+
         except:
             print("W: Connection is not available.")
+
         else:
             plug_path_str = f"{homedir}/.config/tmux/plugins/catppuccin/"
             theme = "tmux/"
@@ -233,13 +236,23 @@ def tmux(diff=False):
                 plug_path.mkdir(exist_ok=True, parents=True)
 
             if not theme_path.exists():
-                repo = g.Repo.clone_from(src, str(theme_path))
+                try:
+                    repo = g.Repo.clone_from(src, str(theme_path))
+
+                except Exception as e:
+                    print(f"E: {e}")
+
+                else:
+                    print("I: cloned theme successfully via git")
+
             else:
                 try:
                     repo = g.Repo(str(theme_path))
                     origin = repo.remote(name="origin")
                     origin.pull("refs/heads/main:refs/heads/main")
+
                 except Exception as e:
                     print(f"E: {e}")
+
                 else:
                     print("I: updated theme successfully via git")
