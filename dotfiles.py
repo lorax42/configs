@@ -18,6 +18,7 @@ funcs = [
     ['wofi', wofi],
     ['bash', bash],
     ['scripts', scripts],
+    ['tmux', tmux],
 ]
 
 all_funcs = []

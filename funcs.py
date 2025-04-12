@@ -5,7 +5,8 @@ import shutil as st
 import filecmp as cmp
 import difflib
 import subprocess
-
+import requests
+import git as g
 
 homedir = pl.Path.home()
 
@@ -208,3 +209,36 @@ def git(diff=False):
             f"{homedir}/.gitconfig-github", diff=diff)
     install("./git/gitconfig-solarpunk",
             f"{homedir}/.gitconfig-solarpunk", diff=diff)
+
+
+def tmux(diff=False):
+    install("./tmux/tmux.conf", f"{homedir}/.tmux.conf", diff=diff)
+
+    # get catppuccin theme
+    src = "https://github.com/catppuccin/tmux.git"
+    try:
+        requests.get(src)
+        print("I: Connection is available.")
+    except:
+        print("W: Connection is not available.")
+    else:
+        plug_path_str = f"{homedir}/.config/tmux/plugins/catppuccin/"
+        theme = "tmux/"
+
+        plug_path = pl.Path(plug_path_str)
+        theme_path = pl.Path(f"{plug_path_str}{theme}")
+
+        if not plug_path.exists():
+            plug_path.mkdir(exist_ok=True, parents=True)
+
+        if not theme_path.exists():
+            repo = g.Repo.clone_from(src, str(theme_path))
+        else:
+            try:
+                repo = g.Repo(str(theme_path))
+                origin = repo.remote(name="origin")
+                origin.pull("refs/heads/main:refs/heads/main")
+            except Exception as e:
+                print(f"E: {e}")
+            else:
+                print("I: updated theme successfully via git")
