@@ -16,7 +16,20 @@ alias la="$ls -A --group-directories-first"
 #alias la="$ls -1sha --group-directories-first"
 alias lla="$ls -lhA --group-directories-first"
 
-alias update="sudo apt update && sudo apt upgrade -y && flatpak update -y && sudo apt autoremove -y && sudo apt autoclean && rustup update"
+# alias update="sudo apt update && sudo apt upgrade -y && flatpak update -y && sudo apt autoremove -y && sudo apt autoclean && rustup update"
+update () {
+    echo "### SYSTEM PACKAGES ###"
+    sudo apt update && sudo apt uppgrade -y
+    sudo apt autoremove -y sudo apt autoclean
+    
+    echo ""
+    echo "### FLATPAK ###"
+    flatpak update -y
+
+    echo ""
+    echo "### RUST TOOLCHAIN ###"
+    rustup update
+}
 
 alias rm="rm -I"
 alias cp="cp -i"
