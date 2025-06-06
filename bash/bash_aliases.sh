@@ -47,6 +47,10 @@ fi
 if [[ $(which yazi) ]]; then
     alias y="yazi"
 fi
+
+if [[ $(flatpak run org.getzola.zola  --version 2> /dev/null) ]]; then
+    alias zola="flatpak run org.getzola.zola"
+fi
  
 # WINDOWS C/C++
 alias wingcc="x86_64-w64-mingw32-gcc"
