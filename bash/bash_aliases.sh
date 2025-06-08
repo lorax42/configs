@@ -19,7 +19,7 @@ alias lla="$ls -lhA --group-directories-first"
 # alias update="sudo apt update && sudo apt upgrade -y && flatpak update -y && sudo apt autoremove -y && sudo apt autoclean && rustup update"
 update () {
     echo "### SYSTEM PACKAGES ###"
-    sudo apt update && sudo apt uppgrade -y
+    sudo apt update && sudo apt upgrade -y
     sudo apt autoremove -y sudo apt autoclean
     
     echo ""
