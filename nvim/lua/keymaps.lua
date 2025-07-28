@@ -119,6 +119,9 @@ end
 -- lsp
 vim.keymap.set('n', '<leader>e', function() vim.diagnostic.open_float(nil, { focusable = false }) end)
 
+-- fine-cmdline
+vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', { noremap = true })
+
 -----------------
 -- Visual mode --
 -----------------
@@ -131,4 +134,3 @@ vim.keymap.set('v', '>', '>gv', opts)
 -- Terminal mode --
 -------------------
 vim.keymap.set('t', '<ESC><ESC><ESC>', '<C-\\><C-n>')
-

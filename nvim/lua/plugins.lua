@@ -577,4 +577,11 @@ require("lazy").setup({
             require("telescope").load_extension("ui-select")
         end,
     },
+
+    {
+        "VonHeikemen/fine-cmdline.nvim",
+        dependencies = {
+            "MunifTanjim/nui.nvim"
+        }
+    },
 })
