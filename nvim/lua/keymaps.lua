@@ -1,6 +1,3 @@
--- define common options
-vim.g.mapleader = " "
-
 local opts = {
     noremap = true, -- non-recursive
     silent = true,  -- do not show message
@@ -28,7 +25,6 @@ vim.keymap.set('v', '<A-Up>', ":m '<-2<CR>gv=gv", opts)
 vim.keymap.set('v', '<A-j>', ":m '<-2<CR>gv=gv", opts)
 vim.keymap.set('v', '<A-Down>', ":m '>+1<CR>gv=gv", opts)
 vim.keymap.set('v', '<A-k>', ":m '>+1<CR>gv=gv", opts)
-
 vim.keymap.set('i', '<A-j>', '<ESC>ddp==gi', opts)
 vim.keymap.set('i', '<A-DOWN>', '<ESC>ddp==gi', opts)
 vim.keymap.set('i', '<A-k>', '<ESC>ddkP==gi', opts)
@@ -38,18 +34,6 @@ vim.keymap.set('i', '<A-UP>', '<ESC>ddkP==gi', opts)
 
 -- disable highlighting
 vim.keymap.set('n', '<leader>h', ':noh<CR>', opts)
-
--- telescope
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>fz', builtin.builtin, {})
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fi', builtin.current_buffer_fuzzy_find, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-vim.keymap.set('n', '<leader>fm', builtin.man_pages, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fk', builtin.keymaps, {})
-vim.keymap.set('n', '<leader>flr', builtin.lsp_references, {})
 
 -- git/gitsigns
 local gitsigns = require('gitsigns')
@@ -64,9 +48,6 @@ vim.keymap.set('n', '<leader>gA', ':Git add .', {})
 vim.keymap.set('n', '<leader>gc', ':Git commit<CR>', {})
 vim.keymap.set('n', '<leader>gp', ':Git pull<CR>', {})
 vim.keymap.set('n', '<leader>gP', ':Git push<CR>', {})
-
--- NvimTree
-vim.keymap.set('n', '<C-f>', ':NvimTreeFocus<CR>', opts)
 
 -- transparent background
 --local function trans()
@@ -83,7 +64,7 @@ vim.keymap.set('n', '<C-f>', ':NvimTreeFocus<CR>', opts)
 -- vim.keymap.set('n', ':notrans', notrans(), {})
 
 -- tabe keybindings
-vim.keymap.set('n', '<leader>t', ':tabe<CR>')
+-- vim.keymap.set('n', '<leader>t', ':tabe<CR>')
 --vim.keymap.set('n', '<leader><tab>', 'gt')
 --vim.keymap.set('n', '<leader><shift><tab>', 'gT')
 
