@@ -101,7 +101,7 @@ end
 vim.keymap.set('n', '<leader>e', function() vim.diagnostic.open_float(nil, { focusable = false }) end)
 
 -- fine-cmdline
-vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', { noremap = true })
+-- vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', { noremap = true })
 
 -----------------
 -- Visual mode --
