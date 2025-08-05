@@ -1,0 +1,19 @@
+{
+	"name": "my-snippets",
+	"contributes": {
+		"snippets": [
+			{
+				"language": [
+					"kerboscript"
+				],
+				"path": "./snippets/kos.json"
+			},
+			{
+				"language": [
+					"gitcommit"
+				],
+				"path": "./snippets/gitcommit.json"
+			}
+		]
+	}
+}
