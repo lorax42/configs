@@ -1,3 +1,6 @@
+> [!warning]
+> This repo is archived
+
 # configs
 
 These are my dotfiles.
